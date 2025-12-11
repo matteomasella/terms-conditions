@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2M Apartments - Guida Ospiti e Termini</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #004D54; /* Ottanio */
+            --secondary-color: #f8f9fa; 
+            --accent-color: #54C4A6; /* Verde secondario */
+            --text-color: #222; 
+            --glass-bg: rgba(255, 255, 255, 0.25); 
+            --glass-border: rgba(255, 255, 255, 0.4); 
+            --glass-blur: 12px; 
+            --glass-shadow: 0 8px 32px 0 rgba(0, 77, 84, 0.25); 
+            --alert-bg: rgba(229, 115, 115, 0.15);
+            --alert-border: #e57373;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 50%, #BFEBFF 100%);
+            background-attachment: fixed;
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            padding: 20px 40px 40px 40px;
+            border-radius: 24px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+        }
+        
+        /* --- HEADER --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--glass-border);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-img {
+            height: 70px;
+            width: auto;
+            object-fit: contain;
+        }
+        h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 1.5em;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.5);
+            line-height: 1.2;
+        }
+        .lang-switcher {
+            display: flex;
+            gap: 5px;
+        }
+        @media (max-width: 650px) {
+            .header { flex-direction: column; text-align: center; }
+            .header-brand { flex-direction: column; }
+            .logo-img { height: 80px; }
+        }
+        .lang-btn {
+            background: var(--glass-bg);
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        .lang-btn.active, .lang-btn:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        /* --- QUICK GUIDE --- */
+        .quick-guide {
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid var(--glass-border);
+        }
+        .quick-guide h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.5em;
+            border-bottom: 1px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .quick-intro { font-size: 1.05em; margin-bottom: 20px; font-style: italic; }
+        .quick-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        @media (max-width: 600px) { .quick-grid { grid-template-columns: 1fr; } }
+        .quick-item {
+            background: rgba(255,255,255,0.3);
+            padding: 10px 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .quick-icon { font-size: 1.2em; }
+        .energy-box {
+            background: rgba(84, 196, 166, 0.2);
+            border: 1px solid var(--accent-color);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        .energy-box h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .transition-note {
+            text-align: center;
+            margin: 25px 0 10px 0;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- ACCORDION --- */
+        .accordion {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--primary-color);
+            cursor: pointer;
+            padding: 20px;
+            width: 100%;
+            border: 1px solid var(--glass-border);
+            text-align: left;
+            outline: none;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            border-radius: 16px;
+            margin-top: 15px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        .accordion:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .accordion.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 16px 16px 0 0;
+            border-color: var(--primary-color);
+            box-shadow: var(--glass-shadow);
+        }
+        .accordion .icon:after { content: '+'; font-size: 1.5em; line-height: 1; }
+        .accordion.active .icon:after { content: '−'; }
+        
+        .panel {
+            padding: 0 20px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            border: 1px solid var(--primary-color);
+            border-top: none;
+            border-radius: 0 0 16px 16px;
+        }
+        .panel h2 {
+            color: var(--accent-color);
+            margin-top: 20px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .panel ul { list-style-type: none; padding-left: 0; }
+        .panel li { margin-bottom: 15px; padding-left: 25px; position: relative; }
+        .panel li::before { content: '✓'; color: var(--accent-color); position: absolute; left: 0; font-weight: bold; }
+        .panel .sub-list li::before { content: '•'; color: var(--primary-color); }
+        .panel .legal-list li::before { content: '•'; color: var(--text-color); } /* Per liste privacy */
+        
+        .important-note {
+            background-color: var(--alert-bg);
+            border-left: 4px solid var(--alert-border);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        
+        /* --- TABELLA CANCELLAZIONE --- */
+        .policy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .policy-table th, .policy-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 77, 84, 0.1);
+        }
+        .policy-table th {
+            background-color: rgba(0, 77, 84, 0.15);
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        .quote-box {
+            font-style: italic;
+            border-left: 4px solid var(--primary-color);
+            margin: 20px 0;
+            background: rgba(255,255,255,0.3);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .quote-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-style: normal;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+
+        /* --- CHATBOT --- */
+        #chat-container {
+            margin-top: 40px;
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+        }
+        #chat-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        #chat-box {
+            height: 350px;
+            overflow-y: auto;
+            padding: 20px;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .chat-message {
+            padding: 10px 18px;
+            border-radius: 20px;
+            max-width: 80%;
+            word-wrap: break-word;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .user-message {
+            background-color: var(--accent-color);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+        .bot-message {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            color: var(--text-color);
+            align-self: flex-start;
+            border: 1px solid var(--glass-border);
+            border-bottom-left-radius: 5px;
+        }
+        #chat-input-container {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid var(--glass-border);
+            background-color: transparent;
+        }
+        #user-input {
+            flex-grow: 1;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid var(--glass-border);
+            padding: 12px 18px;
+            border-radius: 25px;
+            margin-right: 10px;
+            font-size: 1em;
+            transition: all 0.3s;
+            color: var(--text-color);
+        }
+        #user-input:focus { outline: none; background: rgba(255, 255, 255, 0.5); border-color: var(--accent-color); }
+        #send-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        #send-btn:hover { background-color: #45a088; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="header-brand">
+            <img src="logocortina.png" alt="2EMME Apartments Logo" class="logo-img">
+            <h1 data-key="mainTitle">Welcome & Policy</h1>
+        </div>
+        
+        <div class="lang-switcher">
+            <button class="lang-btn active" id="lang-it">IT</button>
+            <button class="lang-btn" id="lang-en">EN</button>
+            <button class="lang-btn" id="lang-es">ES</button>
+            <button class="lang-btn" id="lang-fr">FR</button>
+            <button class="lang-btn" id="lang-de">DE</button>
+        </div>
+    </div>
+
+    <div class="quick-guide">
+        <h2 data-key="quickTitle">Quick Guide & House Rules</h2>
+        <p class="quick-intro" data-key="quickIntro">
+            Siamo felici di averti qui! Per garantire a tutti un'esperienza confortevole, abbiamo raccolto alcune semplici linee guida amichevoli per aiutarti a sentirti a casa.
+        </p>
+        
+        <div class="quick-grid" data-key="quickGrid">
+            </div>
+
+        <div class="energy-box">
+            <h3 data-key="quickEnergyTitle">🌱 Our Energy Policy: Let's Save Together!</h3>
+            <p data-key="quickEnergyText">
+                Ci impegniamo a proteggere l'ambiente e gestire i costi. Imposta l'aria condizionata sopra i 20°C e chiudi le finestre. I nostri sistemi smart monitorano i consumi: ogni abuso sarà sanzionato. Spegni le luci quando esci!
+            </p>
+        </div>
+    </div>
+
+    <div class="transition-note" data-key="transitionText">
+        ⬇️ Per dettagli legali, clausole e costi completi, espandi le sezioni qui sotto ⬇️
+    </div>
+
+    <button class="accordion"><span data-key="paymentTitle">Prenotazioni Dirette: Pagamenti & Cancellazione</span><span class="icon"></span></button>
+    <div class="panel" data-key="paymentContent"></div>
+
+    <button class="accordion"><span data-key="costsTitle">Costi, Tasse e Depositi</span><span class="icon"></span></button>
+    <div class="panel">
+      <ul data-key="costsList"></ul>
+    </div>
+
+    <button class="accordion"><span data-key="contractTitle">Contratto e Clausole Oggetto di Specifica Approvazione</span><span class="icon"></span></button>
+    <div class="panel">
+        <div data-key="contractContent"></div>
+    </div>
+
+    <button class="accordion"><span data-key="rulesTitle">Regole della Casa (Dettaglio)</span><span class="icon"></span></button>
+    <div class="panel">
+      <ul data-key="rulesList"></ul>
+    </div>
+
+    <button class="accordion"><span data-key="greenTitle">Politica Ecologica (Dettaglio)</span><span class="icon"></span></button>
+    <div class="panel">
+      <ul data-key="greenList"></ul>
+    </div>
+    
+    <button class="accordion"><span data-key="damageTitle">Approfondimento: Deposito e Polizza Danni</span><span class="icon"></span></button>
+    <div class="panel" data-key="damageDetails"></div>
+
+    <button class="accordion"><span data-key="privacyTitle">Informativa Privacy & GDPR</span><span class="icon"></span></button>
+    <div class="panel" data-key="privacyContent"></div>
+
+    <div id="chat-container">
+        <div id="chat-header" data-key="chatHeader">Assistente Virtuale</div>
+        <div id="chat-box"></div>
+        <div id="chat-input-container">
+            <input type="text" id="user-input" data-key="chatPlaceholder" placeholder="Scrivi la tua domanda qui...">
+            <button id="send-btn" data-key="chatSend">Invia</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- BILINGUAL CONTENT ---
+        // NOTA: I testi in Italiano sono stati inseriti ESATTAMENTE come richiesto. 
+        // Le traduzioni sono fedeli e non sintetizzate.
+        
+        const texts = {
+            mainTitle: { it: "Benvenuto & Regolamento", en: "Welcome & Policy", es: "Bienvenida y Normas", fr: "Bienvenue et Règles", de: "Willkommen & Regeln" },
+            
+            // --- QUICK GUIDE ---
+            quickTitle: { it: "Quick Guide: Regole della Casa", en: "Quick Guide: House Rules", es: "Guía Rápida: Normas de la Casa", fr: "Guide Rapide : Règles de la Maison", de: "Kurzanleitung: Hausregeln" },
+            quickIntro: {
+                it: "Siamo felici di averti qui! Per garantire a tutti un'esperienza confortevole, abbiamo raccolto alcune semplici linee guida amichevoli per aiutarti a sentirti a casa.",
+                en: "We're so happy to have you stay with us! To ensure everyone has a comfortable experience, here are a few friendly guidelines. Think of these as tips to help us all get along and keep our place cozy for future guests.",
+                es: "¡Estamos muy contentos de tenerte aquí! Para asegurar una estancia cómoda para todos, aquí tienes algunas pautas amistosas. Considéralas consejos para mantener el lugar acogedor para futuros huéspedes.",
+                fr: "Nous sommes ravis de vous accueillir ! Pour assurer un séjour confortable à tous, voici quelques directives amicales. Considérez-les comme des conseils pour garder notre lieu accueillant pour les futurs invités.",
+                de: "Wir freuen uns sehr, Sie bei uns zu haben! Damit jeder einen angenehmen Aufenthalt hat, hier ein paar freundliche Richtlinien. Betrachten Sie diese als Tipps, um unseren Ort für zukünftige Gäste gemütlich zu halten."
+            },
+            quickGrid: {
+                it: `<div class="quick-item"><span class="quick-icon">👥</span><span><strong>Solo Ospiti Registrati:</strong> Per sicurezza, solo chi è registrato può soggiornare.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🚭</span><span><strong>No Fumo:</strong> Mantieni l'aria fresca, niente fumo in casa.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🐾</span><span><strong>Niente Animali:</strong> Anche se li amiamo, gli animali non sono ammessi.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🌙</span><span><strong>Ore di Silenzio:</strong> 21:00 - 07:00. Rispetta il riposo dei vicini.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🎉</span><span><strong>Niente Feste:</strong> La casa è fatta per il relax, non per gli eventi.</span></div>
+                     <div class="quick-item"><span class="quick-icon">♻️</span><span><strong>Ricicla:</strong> Aiutaci a essere Green seguendo la guida ai rifiuti.</span></div>
+                     <div class="quick-item"><span class="quick-icon">⏰</span><span><strong>Check-Out:</strong> Entro le ore 11:00. Grazie per la puntualità!</span></div>`,
+                en: `<div class="quick-item"><span class="quick-icon">👥</span><span><strong>Registered Guests Only:</strong> For safety, only officially registered guests allowed.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🚭</span><span><strong>No Smoking:</strong> Please keep the air fresh, no smoking inside.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🐾</span><span><strong>No Pets:</strong> While we love them, pets aren't allowed.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🌙</span><span><strong>Quiet Hours:</strong> 9 PM - 7 AM. Please respect our neighbors' sleep.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🎉</span><span><strong>No Parties:</strong> Our place is for relaxation, not for events.</span></div>
+                     <div class="quick-item"><span class="quick-icon">♻️</span><span><strong>Recycle:</strong> Help us be Green by following the waste guide.</span></div>
+                     <div class="quick-item"><span class="quick-icon">⏰</span><span><strong>Check-Out:</strong> By 11:00 AM. Thank you for being prompt!</span></div>`,
+                es: `<div class="quick-item"><span class="quick-icon">👥</span><span><strong>Solo Huéspedes Registrados:</strong> Por seguridad, solo registrados.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🚭</span><span><strong>No Fumar:</strong> Mantén el aire fresco, no fumes dentro.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🐾</span><span><strong>Sin Mascotas:</strong> Aunque los amamos, no se permiten mascotas.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🌙</span><span><strong>Horas de Silencio:</strong> 21:00 - 07:00. Respeta a los vecinos.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🎉</span><span><strong>Sin Fiestas:</strong> El lugar es para relajarse, no para eventos.</span></div>
+                     <div class="quick-item"><span class="quick-icon">♻️</span><span><strong>Recicla:</strong> Ayúdanos a ser ecológicos con la basura.</span></div>
+                     <div class="quick-item"><span class="quick-icon">⏰</span><span><strong>Check-Out:</strong> A las 11:00 AM. ¡Gracias por la puntualidad!</span></div>`,
+                fr: `<div class="quick-item"><span class="quick-icon">👥</span><span><strong>Invités Enregistrés :</strong> Pour la sécurité, seuls les enregistrés.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🚭</span><span><strong>Non Fumeur :</strong> Gardez l'air frais, ne fumez pas à l'intérieur.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🐾</span><span><strong>Pas d'Animaux :</strong> Nous les aimons, mais ils ne sont pas admis.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🌙</span><span><strong>Heures de Silence :</strong> 21h00 - 07h00. Respectez les voisins.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🎉</span><span><strong>Pas de Fêtes :</strong> L'endroit est pour la détente.</span></div>
+                     <div class="quick-item"><span class="quick-icon">♻️</span><span><strong>Recyclez :</strong> Aidez-nous à être écolos avec les déchets.</span></div>
+                     <div class="quick-item"><span class="quick-icon">⏰</span><span><strong>Départ :</strong> À 11h00. Merci d'être ponctuel !</span></div>`,
+                de: `<div class="quick-item"><span class="quick-icon">👥</span><span><strong>Nur registrierte Gäste:</strong> Aus Sicherheitsgründen nur Angemeldete.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🚭</span><span><strong>Nichtraucher:</strong> Bitte drinnen nicht rauchen.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🐾</span><span><strong>Keine Haustiere:</strong> Tiere sind leider nicht erlaubt.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🌙</span><span><strong>Ruhezeiten:</strong> 21:00 - 07:00 Uhr. Bitte Nachbarn respektieren.</span></div>
+                     <div class="quick-item"><span class="quick-icon">🎉</span><span><strong>Keine Partys:</strong> Der Ort ist zur Entspannung gedacht.</span></div>
+                     <div class="quick-item"><span class="quick-icon">♻️</span><span><strong>Recycling:</strong> Helfen Sie uns, grün zu sein (Mülltrennung).</span></div>
+                     <div class="quick-item"><span class="quick-icon">⏰</span><span><strong>Check-Out:</strong> Bis 11:00 Uhr. Danke für die Pünktlichkeit!</span></div>`
+            },
+            quickEnergyTitle: { it: "🌱 Politica Energetica: Risparmiamo Insieme!", en: "🌱 Energy Policy: Let's Save Together!", es: "🌱 Política Energética: ¡Ahorremos Juntos!", fr: "🌱 Politique Énergétique : Économisons Ensemble !", de: "🌱 Energiepolitik: Gemeinsam Sparen!" },
+            quickEnergyText: {
+                it: "Ci impegniamo a proteggere l'ambiente e gestire i costi. Imposta l'aria condizionata sopra i 20°C e chiudi le finestre. I nostri sistemi smart monitorano i consumi: ogni abuso sarà sanzionato. Spegni le luci quando esci!",
+                en: "We're committed to protecting our environment and managing costs. Please set AC above 20°C and ensure windows are closed when it's running. Our smart systems monitor unusual usage: any abuse will be sanctioned. Remember to turn off lights and appliances when heading out!",
+                es: "Nos comprometemos a proteger el medio ambiente. Configure el aire acondicionado por encima de 20°C y cierre las ventanas. Nuestros sistemas inteligentes monitorean el uso: cualquier abuso será sancionado. ¡Apaga las luces al salir!",
+                fr: "Nous nous engageons à protéger l'environnement. Réglez la climatisation au-dessus de 20°C et fermez les fenêtres. Nos systèmes intelligents surveillent la consommation : tout abus sera sanctionné. Éteignez les lumières en sortant !",
+                de: "Wir engagieren uns für den Umweltschutz. Stellen Sie die Klimaanlage auf über 20°C und schließen Sie die Fenster. Unsere intelligenten Systeme überwachen den Verbrauch: Jeder Missbrauch wird geahndet. Licht beim Rausgehen ausschalten!"
+            },
+            transitionText: {
+                it: "⬇️ Per dettagli legali, clausole e costi completi, espandi le sezioni qui sotto ⬇️",
+                en: "⬇️ For full legal details, clauses, and costs, expand the sections below ⬇️",
+                es: "⬇️ Para detalles legales, cláusulas y costos completos, expande abajo ⬇️",
+                fr: "⬇️ Pour les détails juridiques et les coûts complets, développez ci-dessous ⬇️",
+                de: "⬇️ Für vollständige rechtliche Details und Kosten, unten erweitern ⬇️"
+            },
+            
+            // --- SEZIONE: PRENOTAZIONI DIRETTE, PAGAMENTI E CANCELLAZIONE ---
+            paymentTitle: { it: "Prenotazioni Dirette: Pagamenti & Cancellazione", en: "Direct Bookings: Payments & Cancellation", es: "Reservas Directas: Pagos y Cancelación", fr: "Réservations Directes : Paiements et Annulation", de: "Direktbuchungen: Zahlungen & Stornierung" },
+            paymentContent: {
+                it: `
+                    <p>Prenotazioni dirette: caparra 30% alla conferma, saldo 14 giorni prima dell’arrivo. Cauzione obbligatoria (blocco carta o versamento) €100–€300. Cancellazioni: policy Moderata (rimborso totale fino a 14 giorni prima; dal 14 al 7 giorni 50%; entro 7 giorni 100% trattenuto) — offriamo anche tariffe non rimborsabili scontate. Tassa di soggiorno esclusa. Pagamenti con carta o bonifico. Per fattura inviare dati fiscali.</p>
+                    
+                    <h3>Politica di Cancellazione (Moderata)</h3>
+                    <table class="policy-table">
+                        <tr>
+                            <th>Periodo prima dell’arrivo</th>
+                            <th>Rimborso (caparra/saldo)</th>
+                        </tr>
+                        <tr>
+                            <td>≥ 14 giorni</td>
+                            <td>100% (caparra rimborsata)</td>
+                        </tr>
+                        <tr>
+                            <td>14–7 giorni</td>
+                            <td>50% del totale</td>
+                        </tr>
+                        <tr>
+                            <td>< 7 giorni / No-show</td>
+                            <td>0% (nessun rimborso)</td>
+                        </tr>
+                    </table>
+
+                    <p><strong>Metodi di pagamento</strong><br>
+                    Accettiamo:
+                    <ul>
+                        <li>Carta di credito/debito (VISA, Mastercard, Maestro) — pagamento e/o pre-autorizzazione tramite gateway.</li>
+                        <li>Bonifico bancario (solo per prenotazioni dirette; indicare causale e termine).</li>
+                        <li>Pagamenti elettronici su richiesta (es. PayPal) se concordato.</li>
+                    </ul>
+                    Le spese bancarie e di transazione restano a carico del pagante salvo diverso accordo scritto.</p>
+
+                    <p><strong>No-show e late cancellation</strong><br>
+                    No-show: prevede la perdita della caparra e/o addebito secondo la policy scelta. Ritardi nel pagamento del saldo entro i termini possono comportare cancellazione automatica della prenotazione.</p>
+                    
+                    <div class="quote-box">
+                        <span class="quote-title">Clausola Contrattuale</span>
+                        “Il Conduttore si impegna a versare la caparra pari al 30% del corrispettivo al momento della conferma; il saldo è dovuto 14 giorni prima dell’inizio del periodo di locazione. È prevista cauzione a garanzia di eventuali danni. In caso di cancellazione si applicano le condizioni indicate nella conferma di prenotazione. Le spese di transazione e le tasse locali sono a carico dell’ospite se non diversamente specificato.”
+                    </div>
+                `,
+                en: `
+                    <p>Direct bookings: 30% deposit upon confirmation, balance 14 days before arrival. Mandatory security deposit (card block or transfer) €100–€300. Cancellations: Moderate policy (full refund up to 14 days before; from 14 to 7 days 50%; within 7 days 100% withheld) — we also offer discounted non-refundable rates. City tax excluded. Payments by card or bank transfer. For invoices, please send fiscal data.</p>
+                    
+                    <h3>Cancellation Policy (Moderate)</h3>
+                    <table class="policy-table">
+                        <tr>
+                            <th>Period before arrival</th>
+                            <th>Refund (deposit/balance)</th>
+                        </tr>
+                        <tr>
+                            <td>≥ 14 days</td>
+                            <td>100% (deposit refunded)</td>
+                        </tr>
+                        <tr>
+                            <td>14–7 days</td>
+                            <td>50% of total</td>
+                        </tr>
+                        <tr>
+                            <td>< 7 days / No-show</td>
+                            <td>0% (no refund)</td>
+                        </tr>
+                    </table>
+
+                    <p><strong>Payment Methods</strong><br>
+                    We accept:
+                    <ul>
+                        <li>Credit/debit card (VISA, Mastercard, Maestro) — payment and/or pre-authorization via gateway.</li>
+                        <li>Bank transfer (only for direct bookings; indicate reason and deadline).</li>
+                        <li>Electronic payments on request (e.g., PayPal) if agreed.</li>
+                    </ul>
+                    Bank and transaction fees remain the payer's responsibility unless otherwise agreed in writing.</p>
+
+                    <p><strong>No-show and late cancellation</strong><br>
+                    No-show: involves loss of the deposit and/or charge according to the chosen policy. Delays in balance payment within terms may result in automatic cancellation of the booking.</p>
+                    
+                    <div class="quote-box">
+                        <span class="quote-title">Contract Clause</span>
+                        “The Tenant agrees to pay a deposit equal to 30% of the consideration at the time of confirmation; the balance is due 14 days before the start of the rental period. A security deposit is required to guarantee potential damages. In case of cancellation, the conditions indicated in the booking confirmation apply. Transaction fees and local taxes are borne by the guest unless otherwise specified.”
+                    </div>
+                `,
+                es: `
+                    <p>Reservas directas: depósito del 30% en la confirmación, saldo 14 días antes de la llegada. Fianza obligatoria (bloqueo de tarjeta o transferencia) 100-300 €. Cancelaciones: política Moderada (reembolso total hasta 14 días antes; de 14 a 7 días 50%; dentro de 7 días 100% retenido) — también ofrecemos tarifas no reembolsables con descuento. Tasa turística excluida. Pagos con tarjeta o transferencia. Para factura enviar datos fiscales.</p>
+                    
+                    <h3>Política de Cancelación (Moderada)</h3>
+                    <table class="policy-table">
+                        <tr>
+                            <th>Periodo antes de la llegada</th>
+                            <th>Reembolso (depósito/saldo)</th>
+                        </tr>
+                        <tr>
+                            <td>≥ 14 días</td>
+                            <td>100% (depósito reembolsado)</td>
+                        </tr>
+                        <tr>
+                            <td>14–7 días</td>
+                            <td>50% del total</td>
+                        </tr>
+                        <tr>
+                            <td>< 7 días / No-show</td>
+                            <td>0% (sin reembolso)</td>
+                        </tr>
+                    </table>
+
+                    <p><strong>Métodos de pago</strong><br>
+                    Aceptamos:
+                    <ul>
+                        <li>Tarjeta de crédito/débito (VISA, Mastercard, Maestro) — pago y/o preautorización mediante pasarela.</li>
+                        <li>Transferencia bancaria (solo para reservas directas; indicar concepto y plazo).</li>
+                        <li>Pagos electrónicos bajo petición (ej. PayPal) si se acuerda.</li>
+                    </ul>
+                    Los gastos bancarios y de transacción corren a cargo del pagador salvo acuerdo escrito en contrario.</p>
+
+                    <p><strong>No-show y cancelación tardía</strong><br>
+                    No-show: implica la pérdida del depósito y/o cargo según la política elegida. Retrasos en el pago del saldo dentro de los plazos pueden conllevar la cancelación automática de la reserva.</p>
+                    
+                    <div class="quote-box">
+                        <span class="quote-title">Cláusula Contractual</span>
+                        “El Arrendatario se compromete a pagar un depósito igual al 30% de la contraprestación en el momento de la confirmación; el saldo se debe 14 días antes del inicio del período de alquiler. Se requiere una fianza para garantizar posibles daños. En caso de cancelación se aplican las condiciones indicadas en la confirmación de la reserva. Los gastos de transacción y los impuestos locales corren a cargo del huésped a menos que se especifique lo contrario.”
+                    </div>
+                `,
+                fr: `
+                    <p>Réservations directes : acompte de 30% à la confirmation, solde 14 jours avant l’arrivée. Caution obligatoire (blocage carte ou virement) 100–300 €. Annulations : politique Modérée (remboursement total jusqu'à 14 jours avant ; de 14 à 7 jours 50% ; moins de 7 jours 100% retenu) — nous offrons aussi des tarifs non remboursables remisés. Taxe de séjour exclue. Paiements par carte ou virement. Pour facture, envoyer données fiscales.</p>
+                    
+                    <h3>Politique d'Annulation (Modérée)</h3>
+                    <table class="policy-table">
+                        <tr>
+                            <th>Période avant l’arrivée</th>
+                            <th>Remboursement (acompte/solde)</th>
+                        </tr>
+                        <tr>
+                            <td>≥ 14 jours</td>
+                            <td>100% (acompte remboursé)</td>
+                        </tr>
+                        <tr>
+                            <td>14–7 jours</td>
+                            <td>50% du total</td>
+                        </tr>
+                        <tr>
+                            <td>< 7 jours / No-show</td>
+                            <td>0% (aucun remboursement)</td>
+                        </tr>
+                    </table>
+
+                    <p><strong>Méthodes de paiement</strong><br>
+                    Nous acceptons :
+                    <ul>
+                        <li>Carte de crédit/débit (VISA, Mastercard, Maestro) — paiement et/ou pré-autorisation via passerelle.</li>
+                        <li>Virement bancaire (uniquement pour réservations directes ; indiquer motif et délai).</li>
+                        <li>Paiements électroniques sur demande (ex. PayPal) si convenu.</li>
+                    </ul>
+                    Les frais bancaires et de transaction restent à la charge du payeur sauf accord écrit contraire.</p>
+
+                    <p><strong>No-show et annulation tardive</strong><br>
+                    No-show : prévoit la perte de l'acompte et/ou débit selon la politique choisie. Retards de paiement du solde dans les délais peuvent entraîner l'annulation automatique de la réservation.</p>
+                    
+                    <div class="quote-box">
+                        <span class="quote-title">Clause Contractuelle</span>
+                        “Le Locataire s'engage à verser l'acompte égal à 30% du montant au moment de la confirmation ; le solde est dû 14 jours avant le début de la période de location. Une caution est prévue en garantie d'éventuels dommages. En cas d'annulation, les conditions indiquées dans la confirmation de réservation s'appliquent. Les frais de transaction et les taxes locales sont à la charge de l'invité sauf indication contraire.”
+                    </div>
+                `,
+                de: `
+                    <p>Direktbuchungen: Anzahlung 30% bei Bestätigung, Restzahlung 14 Tage vor Anreise. Obligatorische Kaution (Kartenblockierung oder Überweisung) 100–300 €. Stornierungen: Moderate Policy (volle Rückerstattung bis 14 Tage vorher; von 14 bis 7 Tagen 50%; innerhalb von 7 Tagen 100% einbehalten) — wir bieten auch rabattierte nicht erstattungsfähige Tarife an. Kurtaxe exklusive. Zahlungen per Karte oder Überweisung. Für Rechnung bitte Steuerdaten senden.</p>
+                    
+                    <h3>Stornierungsbedingungen (Moderat)</h3>
+                    <table class="policy-table">
+                        <tr>
+                            <th>Zeitraum vor Ankunft</th>
+                            <th>Erstattung (Anzahlung/Rest)</th>
+                        </tr>
+                        <tr>
+                            <td>≥ 14 Tage</td>
+                            <td>100% (Anzahlung erstattet)</td>
+                        </tr>
+                        <tr>
+                            <td>14–7 Tage</td>
+                            <td>50% des Gesamtbetrags</td>
+                        </tr>
+                        <tr>
+                            <td>< 7 Tage / No-show</td>
+                            <td>0% (keine Erstattung)</td>
+                        </tr>
+                    </table>
+
+                    <p><strong>Zahlungsmethoden</strong><br>
+                    Wir akzeptieren:
+                    <ul>
+                        <li>Kredit-/Debitkarte (VISA, Mastercard, Maestro) — Zahlung und/oder Vorautorisierung über Gateway.</li>
+                        <li>Banküberweisung (nur für Direktbuchungen; Verwendungszweck und Frist angeben).</li>
+                        <li>Elektronische Zahlungen auf Anfrage (z.B. PayPal) wenn vereinbart.</li>
+                    </ul>
+                    Bank- und Transaktionsgebühren gehen zu Lasten des Zahlenden, sofern nicht anders schriftlich vereinbart.</p>
+
+                    <p><strong>No-show und späte Stornierung</strong><br>
+                    No-show: sieht den Verlust der Anzahlung und/oder Belastung gemäß gewählter Policy vor. Verzögerungen bei der Restzahlung innerhalb der Fristen können zur automatischen Stornierung der Buchung führen.</p>
+                    
+                    <div class="quote-box">
+                        <span class="quote-title">Vertragsklausel</span>
+                        “Der Mieter verpflichtet sich, die Anzahlung in Höhe von 30% des Entgelts zum Zeitpunkt der Bestätigung zu leisten; der Restbetrag ist 14 Tage vor Beginn des Mietzeitraums fällig. Eine Kaution zur Absicherung eventueller Schäden ist vorgesehen. Im Falle einer Stornierung gelten die in der Buchungsbestätigung angegebenen Bedingungen. Transaktionsgebühren und lokale Steuern gehen zu Lasten des Gastes, sofern nicht anders angegeben.”
+                    </div>
+                `
+            },
+
+            // --- SEZIONE: COSTI ---
+            costsTitle: { it: "Costi, Tasse e Depositi", en: "Costs, Taxes & Deposits", es: "Costos, Impuestos y Depósitos", fr: "Coûts, Taxes et Dépôts", de: "Kosten, Steuern & Kautionen" },
+            costsList: {
+                it: `<li><strong>Tassa di Soggiorno:</strong> Al momento <strong>€6,30 a persona per notte</strong> (max 14 giorni). Nota: dal <strong>1° Gennaio 2026</strong> la tariffa salirà a <strong>€9,50</strong>.</li>
+                     <li><strong>Costo Fisso di Servizio:</strong> €15 per soggiorno per coprire le spese di gestione.</li>
+                     <li><strong>Deposito/Polizza Danni:</strong> Al check-in online è obbligatorio scegliere tra un deposito cauzionale rimborsabile di €350 o l'acquisto di una polizza danni.</li>
+                     <li><strong>Supplementi Stagionali (Surcharge):</strong> Costo aggiuntivo percentuale obbligatorio, calcolato sul <strong>costo del pernotto (escluse tasse e costi accessori)</strong>. Questo contributo serve a coprire gli aumenti del costo dell'energia (gas ed elettricità), ma soprattutto per affrontare i costi della transizione energetica verso le politiche Green, di cui Milano è una delle "Leading City".
+                        <ul class="sub-list">
+                            <li><strong>Estate (Elettricità):</strong> 15 Maggio – 15 Settembre. Valore: <strong>4%</strong> (Cap Max €80, €90 per mensili).</li>
+                            <li><strong>Inverno (Riscaldamento):</strong> 15 Ottobre – 15 Marzo. Valore: <strong>5%</strong> (Cap Max €80, €90 per mensili).</li>
+                        </ul>
+                     </li>
+                     <li><strong>Servizi di Pulizia per Soggiorni Prolungati:</strong>
+                        <ul class="sub-list">
+                            <li><strong>Pulizia di Fine Soggiorno (oltre 2 settimane):</strong> Per soggiorni superiori alle due settimane, il costo della pulizia post-check-out è obbligatorio di €80. Questo importo sostituisce la tariffa standard di €45 normalmente applicata alla fine di un soggiorno.</li>
+                            <li><strong>Servizio Obbligatorio per Soggiorni Molto Lunghi (oltre 3 settimane):</strong> Se il tuo soggiorno supera le tre settimane, è essenziale organizzare un servizio di pulizia ogni 12 giorni. Questo permette al nostro personale di:
+                                <br>- Verificare le condizioni della proprietà.
+                                <br>- Cambiare la biancheria da letto.
+                                <br>- Identificare ed eseguire eventuali piccole riparazioni necessarie.
+                                <br>Questo servizio è fondamentale per mantenere l'appartamento in perfette condizioni e garantire che soddisfi i nostri standard per gli ospiti successivi.
+                            </li>
+                            <li><strong>Penalità per Mancata Conformità:</strong> Se questi servizi extra obbligatori non vengono organizzati nonostante la violazione della regola, verrà applicata una penalità fissa di €150. Questo importo potrebbe aumentare se le condizioni dell'appartamento, al momento del check-out, richiedessero una pulizia o un ripristino più estesi per riportarlo agli standard richiesti.</li>
+                        </ul>
+                     </li>`,
+                en: `<li><strong>City Tax:</strong> Currently <strong>€6.30 per person per night</strong> (max 14 days). Note: from <strong>January 1st, 2026</strong>, the rate will increase to <strong>€9.50</strong>.</li>
+                     <li><strong>Fixed Service Fee:</strong> €15 per stay to cover management expenses.</li>
+                     <li><strong>Deposit/Damage Policy:</strong> Mandatory choice at online check-in between a €350 refundable deposit or a damage policy.</li>
+                     <li><strong>Seasonal Surcharges:</strong> Mandatory additional percentage cost, calculated on the <strong>accommodation cost (excluding taxes and accessory fees)</strong>. This contribution covers rising energy costs (gas and electricity) but primarily supports the energy transition costs towards Green policies, of which Milan is a "Leading City".
+                        <ul class="sub-list">
+                            <li><strong>Summer (Electricity):</strong> May 15 – Sept 15. Value: <strong>4%</strong> (Cap Max €80, €90 for monthly).</li>
+                            <li><strong>Winter (Heating):</strong> Oct 15 – Mar 15. Value: <strong>5%</strong> (Cap Max €80, €90 for monthly).</li>
+                        </ul>
+                     </li>
+                     <li><strong>Cleaning Services for Long Stays:</strong>
+                        <ul class="sub-list">
+                            <li><strong>Final Cleaning (over 2 weeks):</strong> For stays exceeding two weeks, a mandatory post-check-out cleaning fee of €80 applies. This replaces the standard €45 fee.</li>
+                            <li><strong>Mandatory Service for Very Long Stays (over 3 weeks):</strong> If your stay exceeds three weeks, arranging a cleaning service every 12 days is essential. This allows our staff to:
+                                <br>- Verify property conditions.
+                                <br>- Change bed linen.
+                                <br>- Identify and perform small repairs.
+                            </li>
+                            <li><strong>Penalty for Non-Compliance:</strong> A fixed penalty of €150 applies if these mandatory services are not organized. This amount may increase if the apartment requires extensive restoration upon check-out.</li>
+                        </ul>
+                     </li>`,
+                es: `<li><strong>Tasa Turística:</strong> Actualmente <strong>6,30 € por persona y noche</strong> (máx. 14 días). Nota: a partir del <strong>1 de enero de 2026</strong>, la tarifa subirá a <strong>9,50 €</strong>.</li>
+                     <li><strong>Tarifa Fija de Servicio:</strong> 15 € por estancia.</li>
+                     <li><strong>Depósito/Póliza de Daños:</strong> Elección obligatoria en el check-in online entre un depósito de 350 € o una póliza de daños.</li>
+                     <li><strong>Recargos Estacionales (Surcharge):</strong> Costo adicional porcentual obligatorio, calculado sobre el <strong>costo del alojamiento (excluyendo impuestos y gastos accesorios)</strong>. Este aporte cubre el aumento de los costos de energía (gas y electricidad), pero principalmente apoya la transición energética hacia políticas ecológicas, de las cuales Milán es una "Leading City".
+                        <ul class="sub-list">
+                            <li><strong>Verano (Electricidad):</strong> 15 Mayo – 15 Septiembre. Valor: <strong>4%</strong> (Cap Máx 80 €, 90 € mensuales).</li>
+                            <li><strong>Invierno (Calefacción):</strong> 15 Octubre – 15 Marzo. Valor: <strong>5%</strong> (Cap Máx 80 €, 90 € mensuales).</li>
+                        </ul>
+                     </li>
+                     <li><strong>Servicios de Limpieza para Estancias Largas:</strong>
+                        <ul class="sub-list">
+                            <li><strong>Limpieza Final (más de 2 semanas):</strong> Obligatorio 80 € (sustituye la tarifa estándar de 45 €).</li>
+                            <li><strong>Servicio Obligatorio (más de 3 semanas):</strong> Limpieza cada 12 días. Incluye verificación, cambio de ropa de cama y pequeñas reparaciones.</li>
+                            <li><strong>Penalización por Incumplimiento:</strong> Multa fija de 150 € más costos de restauración si es necesario.</li>
+                        </ul>
+                     </li>`,
+                fr: `<li><strong>Taxe de Séjour :</strong> Actuellement <strong>6,30 € par personne et par nuit</strong> (max 14 jours). Note : à partir du <strong>1er janvier 2026</strong>, le tarif passera à <strong>9,50 €</strong>.</li>
+                     <li><strong>Frais de Service :</strong> 15 € par séjour.</li>
+                     <li><strong>Dépôt/Police Dommages :</strong> Choix obligatoire lors de l'enregistrement en ligne entre un dépôt de 350 € ou une police dommages.</li>
+                     <li><strong>Suppléments Saisonniers :</strong> Coût supplémentaire en pourcentage obligatoire, calculé sur le <strong>coût de l'hébergement (hors taxes et frais accessoires)</strong>. Cette contribution couvre la hausse des coûts énergétiques (gaz et électricité) mais soutient surtout la transition énergétique vers des politiques écologiques, dont Milan est une "Leading City".
+                        <ul class="sub-list">
+                            <li><strong>Été (Électricité) :</strong> 15 Mai – 15 Septembre. Valeur : <strong>4 %</strong> (Plafond Max 80 €, 90 € mensuel).</li>
+                            <li><strong>Hiver (Chauffage) :</strong> 15 Octobre – 15 Mars. Valeur : <strong>5 %</strong> (Plafond Max 80 €, 90 € mensuel).</li>
+                        </ul>
+                     </li>
+                     <li><strong>Services de Nettoyage pour Longs Séjours :</strong>
+                        <ul class="sub-list">
+                            <li><strong>Nettoyage Final (plus de 2 semaines) :</strong> Obligatoire 80 € (remplace le tarif standard de 45 €).</li>
+                            <li><strong>Service Obligatoire (plus de 3 semaines) :</strong> Nettoyage tous les 12 jours. Comprend la vérification, le changement de linge et les petites réparations.</li>
+                            <li><strong>Pénalité pour Non-Conformité :</strong> Amende fixe de 150 € plus frais de restauration si nécessaire.</li>
+                        </ul>
+                     </li>`,
+                de: `<li><strong>Kurtaxe:</strong> Derzeit <strong>6,30 € pro Person pro Nacht</strong> (max. 14 Tage). Hinweis: Ab dem <strong>1. Januar 2026</strong> steigt die Gebühr auf <strong>9,50 €</strong>.</li>
+                     <li><strong>Servicegebühr:</strong> 15 € pro Aufenthalt.</li>
+                     <li><strong>Kaution/Schadenspolice:</strong> Obligatorische Wahl beim Online-Check-in zwischen 350 € Kaution oder Schadenspolice.</li>
+                     <li><strong>Saisonale Zuschläge:</strong> Obligatorische prozentuale Zusatzkosten, berechnet auf den <strong>Übernachtungspreis (ohne Steuern und Nebenkosten)</strong>. Dieser Beitrag deckt steigende Energiekosten (Gas und Strom), unterstützt aber vor allem die Energiewende hin zu grünen Maßnahmen, bei denen Mailand eine "Leading City" ist.
+                        <ul class="sub-list">
+                            <li><strong>Sommer (Strom):</strong> 15. Mai – 15. September. Wert: <strong>4%</strong> (Deckelung Max 80 €, 90 € monatlich).</li>
+                            <li><strong>Winter (Heizung):</strong> 15. Oktober – 15. März. Wert: <strong>5%</strong> (Deckelung Max 80 €, 90 € monatlich).</li>
+                        </ul>
+                     </li>
+                     <li><strong>Reinigungsservice für Langzeitaufenthalte:</strong>
+                        <ul class="sub-list">
+                            <li><strong>Endreinigung (über 2 Wochen):</strong> Obligatorisch 80 € (ersetzt die Standardgebühr von 45 €).</li>
+                            <li><strong>Obligatorischer Service (über 3 Wochen):</strong> Reinigung alle 12 Tage. Beinhaltet Überprüfung, Wäschewechsel und kleine Reparaturen.</li>
+                            <li><strong>Strafe bei Nichteinhaltung:</strong> Feste Strafe von 150 € plus Wiederherstellungskosten falls erforderlich.</li>
+                        </ul>
+                     </li>`
+            },
+
+            // --- SEZIONE: CONTRATTO ---
+            contractTitle: { it: "Contratto e Clausole oggetto di Specifica Approvazione", en: "Contract & Clauses Subject to Specific Approval", es: "Contrato y Cláusulas Objeto de Aprobación Específica", fr: "Contrat et Clauses Faisant l'Objet d'une Approbation Spécifique", de: "Vertrag und Gesondert zu Genehmigende Klauseln" },
+            contractContent: {
+                it: `<p>Per completare la prenotazione e accedere all'appartamento, è obbligatorio sottoscrivere il contratto di locazione turistica (ex L.R. Lombardia 27/2015) tramite la nostra piattaforma di Check-in Online (Chekin).</p>
+                     <div class="important-note">
+                        <strong>Clausole oggetto di specifica approvazione:</strong><br>
+                        Durante il check-in, l'ospite dichiara di approvare specificamente, ai sensi degli artt. 1341 e 1342 del Codice Civile, le seguenti clausole del contratto:
+                        <ul>
+                            <li><strong>Art. 5 (Deposito Cauzionale):</strong> Obbligo di versamento e condizioni di trattenuta.</li>
+                            <li><strong>Art. 8.1 (Politica di Cancellazione):</strong> Penali applicabili in caso di disdetta (50% tra 30-15gg, 100% sotto i 15gg).</li>
+                            <li><strong>Art. 8.3 (Partenza Anticipata):</strong> Nessun rimborso dovuto per interruzione anticipata del soggiorno.</li>
+                            <li><strong>Art. 8.5 (Clausola Risolutiva Espressa):</strong> Risoluzione immediata del contratto e allontanamento in caso di mancato pagamento, violazione divieto subaffitto, eccesso numero ospiti o disturbo alla quiete pubblica.</li>
+                        </ul>
+                     </div>`,
+                en: `<p>To complete the booking and access the apartment, it is mandatory to sign the tourist rental agreement via our Online Check-in platform (Chekin).</p>
+                     <div class="important-note">
+                        <strong>Clauses subject to specific approval:</strong><br>
+                        During check-in, the guest specifically approves, pursuant to Arts. 1341 and 1342 of the Civil Code, the following clauses:
+                        <ul>
+                            <li><strong>Art. 5 (Security Deposit):</strong> Mandatory payment and withholding conditions.</li>
+                            <li><strong>Art. 8.1 (Cancellation Policy):</strong> Penalties apply (50% within 30-15 days, 100% under 15 days).</li>
+                            <li><strong>Art. 8.3 (Early Departure):</strong> No refund for early termination of the stay.</li>
+                            <li><strong>Art. 8.5 (Express Termination Clause):</strong> Immediate contract termination and eviction for non-payment, subletting, exceeding guest limits, or noise disturbance.</li>
+                        </ul>
+                     </div>`,
+                es: `<p>Para completar la reserva, es obligatorio firmar el contrato de alquiler turístico a través de nuestra plataforma de Check-in Online.</p>
+                     <div class="important-note">
+                        <strong>Cláusulas objeto de aprobación específica:</strong><br>
+                        Durante el check-in, el huésped aprueba específicamente las siguientes cláusulas:
+                        <ul>
+                            <li><strong>Art. 5 (Depósito):</strong> Obligación de pago y condiciones.</li>
+                            <li><strong>Art. 8.1 (Cancelación):</strong> Penalizaciones aplicables.</li>
+                            <li><strong>Art. 8.3 (Salida Anticipada):</strong> Sin reembolso.</li>
+                            <li><strong>Art. 8.5 (Cláusula de Resolución Expresa):</strong> Terminación inmediata por violaciones graves (ruido, subarriendo, etc.).</li>
+                        </ul>
+                     </div>`,
+                fr: `<p>Pour finaliser la réservation, il est obligatoire de signer le contrat de location touristique via notre plateforme d'enregistrement en ligne.</p>
+                     <div class="important-note">
+                        <strong>Clauses faisant l'objet d'une approbation spécifique :</strong><br>
+                        Lors de l'enregistrement, le client approuve spécifiquement les clauses suivantes :
+                        <ul>
+                            <li><strong>Art. 5 (Dépôt) :</strong> Conditions de paiement et de retenue.</li>
+                            <li><strong>Art. 8.1 (Annulation) :</strong> Pénalités applicables.</li>
+                            <li><strong>Art. 8.3 (Départ Anticipé) :</strong> Aucun remboursement.</li>
+                            <li><strong>Art. 8.5 (Clause Résolutoire) :</strong> Résiliation immédiate en cas d'infraction grave.</li>
+                        </ul>
+                     </div>`,
+                de: `<p>Um die Buchung abzuschließen, ist die Unterzeichnung des Mietvertrags über unsere Online-Check-in-Plattform obligatorisch.</p>
+                     <div class="important-note">
+                        <strong>Gesondert zu genehmigende Klauseln:</strong><br>
+                        Beim Check-in stimmt der Gast den folgenden Klauseln ausdrücklich zu:
+                        <ul>
+                            <li><strong>Art. 5 (Kaution):</strong> Zahlungsverpflichtung.</li>
+                            <li><strong>Art. 8.1 (Stornierung):</strong> Anfallende Strafen.</li>
+                            <li><strong>Art. 8.3 (Vorzeitige Abreise):</strong> Keine Rückerstattung.</li>
+                            <li><strong>Art. 8.5 (Ausdrückliche Auflösungsklausel):</strong> Sofortige Vertragsauflösung bei schweren Verstößen.</li>
+                        </ul>
+                     </div>`
+            },
+
+            // --- SEZIONE: REGOLE CASA ---
+            rulesTitle: { it: "Regole della Casa (Dettaglio)", en: "House Rules (Detailed)", es: "Reglas de la Casa (Detalladas)", fr: "Règles de la Maison (Détails)", de: "Hausordnung (Details)" },
+            rulesList: {
+                it: `<li><strong>Ospiti Registrati:</strong> Solo gli ospiti registrati durante il check-in online sono autorizzati a soggiornare. La violazione comporta l'immediato allontanamento.</li>
+                     <li><strong>Divieto di Fumo e Animali:</strong> È assolutamente vietato fumare all'interno dell'appartamento e non sono ammessi animali domestici. La violazione del divieto di fumo comporta una penale di €200.</li>
+                     <li><strong>Prenotazioni per conto terzi:</strong> Non è possibile effettuare prenotazioni per conto di altre persone senza informare preventivamente il gestore e la piattaforma.</li>
+                     <li><strong>Feste e Rumore:</strong> Le feste sono proibite. <strong>Rumore vietato</strong> dalle 21:00 alle 07:00 (ore di silenzio).</li>
+                     <li><strong>Chiavi:</strong> In caso di smarrimento, verrà addebitata una penale di €150 più i costi per il cambio della serratura.</li>
+                     <li><strong>WC SANITRIT (solo a The NoLo Heritage Studio):</strong> È consentito gettare solo carta igienica in quantità moderate per evitare intasamenti. I danni saranno addebitati.</li>
+                     <li><strong>Check-in/Check-out:</strong> Le procedure di self check-in e self check-out sono obbligatorie e devono essere seguite con precisione.</li>`,
+                en: `<li><strong>Registered Guests:</strong> Only guests registered during the online check-in are allowed to stay. Violation will result in immediate eviction.</li>
+                     <li><strong>No Smoking & No Pets:</strong> Smoking is strictly forbidden inside the apartment, and pets are not allowed. A smoking violation incurs a €200 penalty.</li>
+                     <li><strong>Bookings for Others:</strong> You cannot make reservations on behalf of other people without first informing the host and the platform.</li>
+                     <li><strong>Parties and Noise:</strong> Parties are prohibited. <strong>Noise is forbidden</strong> from 9 PM to 7 AM.</li>
+                     <li><strong>Keys:</strong> If lost, a €150 penalty plus lock replacement costs will be charged.</li>
+                     <li><strong>SANITRIT Toilet (The NoLo Heritage Studio only):</strong> Only use moderate amounts of toilet paper to prevent clogging. Damages from misuse will be charged.</li>
+                     <li><strong>Check-in/Check-out:</strong> Self check-in and check-out procedures are mandatory and must be followed precisely.</li>`,
+                es: `<li><strong>Huéspedes Registrados:</strong> Solo los huéspedes registrados pueden alojarse. Violación = desalojo.</li>
+                     <li><strong>Prohibido Fumar y Mascotas:</strong> Multa fumar 200 €.</li>
+                     <li><strong>Fiestas y Ruido:</strong> Fiestas prohibidas. <strong>Ruido prohibido</strong> de 21:00 a 07:00.</li>
+                     <li><strong>Llaves:</strong> Pérdida = 150 € + cerradura.</li>`,
+                fr: `<li><strong>Invités Enregistrés :</strong> Seuls les invités enregistrés peuvent séjourner.</li>
+                     <li><strong>Fumer et Animaux :</strong> Interdit. Amende fumeur 200 €.</li>
+                     <li><strong>Bruit :</strong> Fêtes interdites. <strong>Bruit interdit</strong> de 21h00 à 07h00.</li>`,
+                de: `<li><strong>Registrierte Gäste:</strong> Nur registrierte Gäste erlaubt.</li>
+                     <li><strong>Rauch-/Haustierverbot:</strong> Strafe Rauchen 200 €.</li>
+                     <li><strong>Lärm:</strong> <strong>Lärm verboten</strong> von 21:00 bis 07:00 Uhr.</li>`
+            },
+
+            // --- SEZIONE: GREEN POLICY ---
+            greenTitle: { it: "Politica Ecologica (Dettaglio)", en: "Green Policy (Detailed)", es: "Política Ecológica (Detalle)", fr: "Politique Écologique (Détails)", de: "Umweltpolitik (Details)" },
+            greenList: {
+                it: `<li><strong>Consumo Energetico (Aria Condizionata):</strong> Impostare l'aria condizionata sopra i 20°C con le finestre chiuse. Il mancato rispetto può comportare un supplemento del 9% sulla prenotazione. Spegnere sempre luci ed elettrodomestici quando si esce.</li>
+                     <li><strong>Riscaldamento Invernale:</strong> In quasi tutti gli appartamenti (eccetto Termopili 29), il riscaldamento è centralizzato. Orari e temperatura (max 20°C ±1) sono stabiliti da ordinanza comunale per il risparmio energetico.</li>
+                     <li><strong>Aria Condizionata 24/7:</strong> È vietato l'uso continuo dell'aria condizionata per evitare guasti al motore, i cui costi di riparazione sarebbero a carico dell'ospite.</li>
+                     <li><strong>Consumo d'Acqua:</strong> Usare l'acqua con consapevolezza. Gli appartamenti <strong>The NoLo Nest</strong> e <strong>The NoLo Studio</strong> sono dotati di boiler elettrico dimensionato per garantire due docce, ma tieni conto che una doccia di 5 minuti può consumare tra 50 e 80 litri. Per cui non lasciare scendere acqua inutilmente, aprila solo quando sei in doccia perché arriva subito calda.</li>
+                     <li><strong>Raccolta Differenziata:</strong> È obbligatorio seguire la guida alla raccolta differenziata. Eventuali multe condominiali saranno detratte dal deposito.</li>`,
+                en: `<li><strong>Energy Consumption (AC):</strong> Set AC above 20°C with windows closed. Non-compliance may result in a 9% surcharge. Turn off lights when leaving.</li>
+                     <li><strong>Winter Heating:</strong> Centralized (max 20°C). Controlled by municipal ordinance.</li>
+                     <li><strong>Water Consumption:</strong> Use water consciously. <strong>The NoLo Nest</strong> and <strong>The NoLo Studio</strong> apartments have an electric boiler sized for two showers, but a 5-minute shower consumes 50-80 liters. Do not let water run unnecessarily; turn it on only when you are in the shower as it arrives hot immediately.</li>
+                     <li><strong>Waste Separation:</strong> Mandatory. Fines deducted from deposit.</li>`,
+                es: `<li><strong>Consumo Energía (AC):</strong> >20°C, ventanas cerradas. Multa 9% si no se cumple.</li>
+                     <li><strong>Calefacción:</strong> Centralizada (máx 20°C).</li>
+                     <li><strong>Consumo de Agua:</strong> Use el agua con conciencia. Los apartamentos <strong>The NoLo Nest</strong> y <strong>The NoLo Studio</strong> tienen un calentador eléctrico para dos duchas, pero una ducha de 5 minutos gasta 50-80 litros. No deje correr el agua innecesariamente; ábrala solo en la ducha, ya que sale caliente de inmediato.</li>
+                     <li><strong>Residuos:</strong> Separación obligatoria.</li>`,
+                fr: `<li><strong>Énergie (Clim) :</strong> >20°C, fenêtres fermées. Surcharge 9% si abus.</li>
+                     <li><strong>Chauffage :</strong> Centralisé (max 20°C).</li>
+                     <li><strong>Consommation d'Eau :</strong> Dans les appartements <strong>The NoLo Nest</strong> et <strong>The NoLo Studio</strong>, le réservoir est dimensionné pour deux douches, mais une douche de 5 minutes consomme 50-80 litres. Ne laissez pas l'eau couler inutilement ; ouvrez-la seulement sous la douche car elle arrive chaude immédiatement.</li>
+                     <li><strong>Déchets :</strong> Tri obligatoire.</li>`,
+                de: `<li><strong>Energie (Klima):</strong> >20°C, Fenster zu. 9% Aufschlag bei Verstoß.</li>
+                     <li><strong>Heizung:</strong> Zentral (max 20°C).</li>
+                     <li><strong>Wasserverbrauch:</strong> In den Apartments <strong>The NoLo Nest</strong> und <strong>The NoLo Studio</strong> reicht der Tank für zwei Duschen, aber eine 5-Minuten-Dusche verbraucht 50-80 Liter. Lassen Sie das Wasser nicht unnötig laufen; drehen Sie es erst unter der Dusche auf, da es sofort warm kommt.</li>
+                     <li><strong>Müll:</strong> Trennung Pflicht.</li>`
+            },
+
+            // --- SEZIONE: DANNI ---
+            damageTitle: { it: "Approfondimento: Deposito e Polizza Danni", en: "Deep Dive: Deposit and Damage Policy", es: "Análisis Detallado: Depósito y Póliza de Daños", fr: "Analyse Approfondie : Dépôt et Police d'Assurance Dommages", de: "Tiefergehende Analyse: Kaution und Schadenspolice" },
+            damageDetails: {
+                it: `<h2>Opzione 1: Deposito Cauzionale (Holding)</h2>
+                     <p>La somma di <strong>€350</strong> viene bloccata sulla carta di credito dell'ospite come trattenuta (Hold). Non avviene un prelievo immediato, ma i fondi vengono resi indisponibili.</p>
+                     <ul>
+                         <li><strong>Durata:</strong> La trattenuta dura 7 giorni e si rinnova automaticamente fino a un massimo di 30 giorni.</li>
+                         <li><strong>Sblocco:</strong> La somma viene rilasciata automaticamente 7 giorni dopo il check-out se non vengono riscontrati danni.</li>
+                     </ul>
+                     <hr>
+                     <h2>Opzione 2: Chekin Security Deposit Waiver Program (Polizza Danni)</h2>
+                     <p>In alternativa al deposito, puoi acquistare una polizza che copre i danni accidentali a fondo perduto. Di seguito i dettagli:</p>
+                     <ul class="sub-list">
+                         <li><strong>Obiettivo:</strong> Coprire danni accidentali alla proprietà (non copre atti intenzionali o negligenza grave).</li>
+                         <li><strong>Limiti e Costi:</strong>
+                             <br>- Limite di €1.500: Costo €27,50
+                             <br>- Limite di €2.500: Costo €30,70
+                             <br>- Limite di €5.000: Costo €35,80
+                         </li>
+                         <li><strong>Franchigia:</strong> Non vengono processati reclami per danni inferiori a €50.</li>
+                         <li><strong>Segnalazione Danni:</strong> I danni devono essere segnalati entro 14 giorni dal check-out.</li>
+                         <li><strong>Esclusioni Principali:</strong> La polizza non copre:
+                             <br>- Danni preesistenti, usura normale, danni estetici.
+                             <br>- Furto senza un verbale di polizia valido.
+                             <br>- Infestazioni, danni da animali selvatici.
+                             <br>- Opere d'arte, oggetti da collezione, oggetti di alto valore.
+                             <br>- Costi di pulizia o rimozione odori.
+                             <br>- Danni strutturali maggiori.
+                             <br>- Danni o furto di proprietà personali dell'ospite.
+                         </li>
+                     </ul>`,
+                en: `<h2>Option 1: Security Deposit (Holding)</h2>
+                     <p>The amount of <strong>€350</strong> is blocked on the guest's credit card as a hold. No immediate withdrawal occurs, but funds are made unavailable.</p>
+                     <ul>
+                         <li><strong>Duration:</strong> The hold lasts for 7 days and renews automatically up to 30 days.</li>
+                         <li><strong>Release:</strong> The amount is released automatically 7 days after check-out if no damage is found.</li>
+                     </ul>
+                     <hr>
+                     <h2>Option 2: Chekin Security Deposit Waiver Program</h2>
+                     <p>Alternatively, purchase a non-refundable policy covering accidental damages. Details:</p>
+                     <ul class="sub-list">
+                         <li><strong>Objective:</strong> Cover accidental damage (excludes intentional acts or gross negligence).</li>
+                         <li><strong>Limits and Costs:</strong>
+                             <br>- €1,500 Limit: Cost €27.50
+                             <br>- €2,500 Limit: Cost €30.70
+                             <br>- €5,000 Limit: Cost €35.80
+                         </li>
+                         <li><strong>Franchise:</strong> Claims under €50 are not processed.</li>
+                         <li><strong>Reporting:</strong> Damages must be reported within 14 days of check-out.</li>
+                         <li><strong>Main Exclusions:</strong> Pre-existing damage, normal wear, theft without police report, pests, art/valuables, cleaning/odors, major structural damage, guest's personal property.
+                         </li>
+                     </ul>`,
+                es: `<h2>Opción 1: Depósito de Seguridad (Retención)</h2>
+                     <p>Se bloquean <strong>350 €</strong> en la tarjeta. Se libera tras el check-out si no hay daños.</p>
+                     <hr>
+                     <h2>Opción 2: Programa de Exención (Póliza de Daños)</h2>
+                     <p>Alternativa no reembolsable para cubrir daños accidentales.</p>
+                     <ul class="sub-list">
+                         <li><strong>Límites y Costos:</strong>
+                             <br>- Límite 1.500 €: Costo 27,50 €
+                             <br>- Límite 2.500 €: Costo 30,70 €
+                             <br>- Límite 5.000 €: Costo 35,80 €
+                         </li>
+                         <li><strong>Franquicia:</strong> Reclamos mínimos de 50 €.</li>
+                         <li><strong>Exclusiones:</strong> Desgaste normal, robo sin denuncia, olores/limpieza, bienes personales.</li>
+                     </ul>`,
+                fr: `<h2>Option 1 : Dépôt de Garantie (Retenue)</h2>
+                     <p>Montant de <strong>350 €</strong> bloqué sur la carte. Libéré après le départ si aucun dommage.</p>
+                     <hr>
+                     <h2>Option 2 : Programme d'Exonération (Police Dommages)</h2>
+                     <p>Alternative non remboursable couvrant les dommages accidentels.</p>
+                     <ul class="sub-list">
+                         <li><strong>Limites et Coûts :</strong>
+                             <br>- Limite 1 500 € : Coût 27,50 €
+                             <br>- Limite 2 500 € : Coût 30,70 €
+                             <br>- Limite 5 000 € : Coût 35,80 €
+                         </li>
+                         <li><strong>Franchise :</strong> Réclamations minimum de 50 €.</li>
+                         <li><strong>Exclusions :</strong> Usure normale, vol sans plainte, nettoyage/odeurs, biens personnels.</li>
+                     </ul>`,
+                de: `<h2>Option 1: Kaution (Einbehaltung)</h2>
+                     <p>Betrag von <strong>350 €</strong> wird auf der Karte blockiert. Freigabe nach Check-out, wenn keine Schäden vorliegen.</p>
+                     <hr>
+                     <h2>Option 2: Schadensverzichtsprogramm (Police)</h2>
+                     <p>Nicht erstattungsfähige Alternative für Unfallschäden.</p>
+                     <ul class="sub-list">
+                         <li><strong>Limits und Kosten:</strong>
+                             <br>- 1.500 € Limit: Kosten 27,50 €
+                             <br>- 2.500 € Limit: Kosten 30,70 €
+                             <br>- 5.000 € Limit: Kosten 35,80 €
+                         </li>
+                         <li><strong>Selbstbeteiligung:</strong> Ansprüche unter 50 € werden nicht bearbeitet.</li>
+                         <li><strong>Ausschlüsse:</strong> Normale Abnutzung, Diebstahl ohne Anzeige, Reinigung/Gerüche, persönliches Eigentum.</li>
+                     </ul>`
+            },
+            
+            // --- SEZIONE: PRIVACY GDPR (TESTO LUNGO COMPLETO) ---
+            privacyTitle: { it: "Informativa Privacy & GDPR", en: "Privacy Policy & GDPR", es: "Política de Privacidad y RGPD", fr: "Politique de Confidentialité et RGPD", de: "Datenschutzerklärung & DSGVO" },
+            privacyContent: {
+                it: `<p><strong>Informativa estesa ai sensi del Regolamento (UE) 2016/679 (GDPR)</strong></p>
+                     <p><strong>1. Titolare del trattamento</strong><br>
+                     Il Titolare del trattamento è 2EMME RE&CONSULTING di Matteo Masella, con sede legale in Via Pietro Colletta 70, 20137 Milano (P.IVA IT13411850962). Per qualsiasi comunicazione relativa al trattamento dei dati personali è possibile contattare il Titolare via e-mail: matteo.masella@duemmeconsulting.it o per posta a: Via Pietro Colletta 70, 20137 Milano.</p>
+                     
+                     <p><strong>2. Responsabile della protezione dei dati (DPO)</strong><br>
+                     Al momento non è stato nominato un Responsabile della Protezione dei Dati (DPO). Per richieste specifiche riguardanti la protezione dei dati contattare il Titolare ai recapiti sopra indicati.</p>
+                     
+                     <p><strong>3. Finalità del trattamento e basi giuridiche</strong><br>
+                     I dati personali raccolti sono trattati per le seguenti finalità, con la corrispondente base giuridica:
+                     <ul class="legal-list">
+                        <li>Esecuzione del contratto di locazione turistica (es. gestione prenotazione, check-in/out, emissione ricevute/fatture, gestione cauzioni, gestione richieste e servizi accessori). Base giuridica: esecuzione di un contratto (art. 6(1)(b) GDPR).</li>
+                        <li>Adempimenti di pubblica sicurezza: trasmissione delle generalità degli ospiti alla Autorità di Pubblica Sicurezza tramite il sistema “Alloggiati Web” ai sensi dell’art. 109 del T.U.L.P.S. e successive disposizioni operative. Base giuridica: obbligo legale (art. 6(1)(c) GDPR).</li>
+                        <li>Obblighi fiscali e contabili: conservazione ed esibizione di documenti contabili, emissione di fatture e adempimenti tributari. Base giuridica: obbligo legale (art. 6(1)(c) GDPR).</li>
+                        <li>Tutela dei diritti e della sicurezza dell’immobile: rilevamento e gestione di danni, gestione di pratiche assicurative e contenziosi. Base giuridica: esecuzione del contratto e legittimo interesse del Titolare (art. 6(1)(b) e 6(1)(f) GDPR).</li>
+                        <li>Comunicazioni commerciali e marketing diretto (newsletter, promozioni): solo previo consenso espresso e separato dell’interessato. Base giuridica: consenso (art. 6(1)(a) GDPR).</li>
+                     </ul></p>
+
+                     <p><strong>4. Tipologie di dati trattati</strong><br>
+                     A seconda della finalità, potranno essere trattati, tra gli altri:
+                     <ul class="legal-list">
+                        <li>dati identificativi (nome, cognome, data e luogo di nascita);</li>
+                        <li>dati relativi al documento di identità (tipo, numero, data e autorità di rilascio) necessari per Alloggiati Web e verifica identità;</li>
+                        <li>codice fiscale;</li>
+                        <li>dati di contatto (indirizzo postale, indirizzo e-mail, numero di telefono);</li>
+                        <li>dati contrattuali e di prenotazione (date di arrivo/partenza, codice prenotazione, numero di occupanti);</li>
+                        <li>dati di pagamento e contabili (coordinate per bonifico, ricevute, estremi transazioni) in forma non sensibile, salvo diversa necessità;</li>
+                        <li>eventuali dati forniti volontariamente per esigenze particolari (allergie, richieste speciali);</li>
+                        <li>registrazioni fotografiche o documentali relative a eventuali danni (solo se rese necessarie per l’attività di documentazione e contestazione).</li>
+                     </ul></p>
+                     
+                     <p><strong>5. Modalità di trattamento</strong><br>
+                     I dati sono trattati con strumenti informatici e/o cartacei, mediante procedure organizzative e logiche strettamente correlate alle finalità sopra indicate. Sono adottate misure tecniche e organizzative idonee a garantire la riservatezza, l’integrità, la disponibilità e la resilienza dei sistemi e dei servizi, tra cui controllo degli accessi, gestione degli account con privilegi limitati, backup, aggiornamenti, utilizzo di connessioni cifrate per le comunicazioni e policy interne di sicurezza.</p>
+
+                     <p><strong>6. Destinatari dei dati e categorie di soggetti che possono venire a conoscenza dei dati</strong><br>
+                     I dati potranno essere comunicati a:
+                     <ul class="legal-list">
+                        <li>Autorità di pubblica sicurezza (tramite Alloggiati Web) e a soggetti pubblici ove richiesto dalla legge;</li>
+                        <li>Fornitori di servizi necessari all’esecuzione del contratto (es. piattaforme di prenotazione / OTA, sistemi di payment processing, servizi di pulizia e manutenzione) in qualità di responsabili del trattamento;</li>
+                        <li>Consulenti professionali (commercialisti, avvocati) e istituti bancari per esigenze di gestione contabile e fiscale;</li>
+                        <li>Società terze che svolgono attività di hosting, conservazione documentale o supporto tecnologico su incarico del Titolare;</li>
+                        <li>Autorità giudiziarie e amministrative in caso di richieste legittime.</li>
+                     </ul>
+                     Tutti i soggetti esterni ricevono i dati in qualità di Responsabili del trattamento e sono vincolati da idonei obblighi contrattuali e di riservatezza.</p>
+
+                     <p><strong>7. Trasferimenti internazionali di dati</strong><br>
+                     Qualora sia necessario trasferire dati verso Paesi terzi (extra-UE), il Titolare garantirà che il trasferimento avvenga solo verso Paesi che assicurano un livello di protezione adeguato o mediante garanzie adeguate (decisione di adeguatezza, clausole contrattuali standard approvate dalla Commissione Europea, regole aziendali vincolanti o altre misure conformi al GDPR). Su richiesta sarà fornita indicazione delle garanzie adottate.</p>
+                     
+                     <p><strong>8. Periodi di conservazione</strong><br>
+                     I dati saranno conservati per il tempo strettamente necessario al perseguimento delle finalità per cui sono stati raccolti e nei limiti imposti dalla normativa applicabile:
+                     <ul class="legal-list">
+                        <li>documenti e dati fiscali e contabili: 10 anni (es. obblighi fiscali e di contabilità);</li>
+                        <li>dati e documentazione relativi alla comunicazione Alloggiati Web e verifica identità: mantenuti in archivio secondo le prassi amministrative e comunque per un periodo non inferiore a 5 anni come buona prassi operativa per finalità probatorie in caso di controlli;</li>
+                        <li>dati relativi a contestazioni danni e causali: per il periodo necessario alla definizione della pratica e per i termini di prescrizione legale;</li>
+                        <li>dati trattati per finalità di marketing: fino alla revoca del consenso.</li>
+                     </ul>
+                     Al termine dei periodi di conservazione i dati saranno cancellati o resi anonimi in modo irreversibile, salvo obblighi di legge che impongano conservazioni più lunghe.</p>
+                     
+                     <p><strong>9. Diritti degli interessati</strong><br>
+                     L’interessato può esercitare i diritti previsti dagli artt. 15-22 del GDPR:
+                     <ul class="legal-list">
+                        <li>diritto di accesso ai propri dati personali;</li>
+                        <li>diritto di rettifica dei dati inesatti;</li>
+                        <li>diritto alla cancellazione (“diritto all’oblio”) nei casi previsti;</li>
+                        <li>diritto alla limitazione del trattamento;</li>
+                        <li>diritto alla portabilità dei dati (quando il trattamento è basato su consenso o contratto e i dati sono trattati con mezzi automatizzati);</li>
+                        <li>diritto di opposizione al trattamento per motivi legittimi;</li>
+                        <li>diritto di proporre reclamo all’Autorità di controllo (Garante per la protezione dei dati personali — www.garanteprivacy.it).</li>
+                     </ul>
+                     Le richieste devono essere indirizzate al Titolare all’indirizzo di posta elettronica matteo.masella@duemmeconsulting.it o via posta a: Via Pietro Colletta 70, 20137 Milano. Le richieste saranno gestite nei termini e nei modi previsti dalla normativa vigente (di norma entro un mese salvo casi particolari).</p>
+                     
+                     <p><strong>10. Conseguenze del mancato conferimento dei dati</strong><br>
+                     Il conferimento dei dati necessari per l’esecuzione del contratto e per l’adempimento degli obblighi di legge (es. invio Alloggiati Web) è obbligatorio. Il mancato conferimento può rendere impossibile la stipula o l’esecuzione del contratto (ad esempio impossibilità di effettuare il check-in o di ospitare l’interessato). Per altri dati facoltativi (es. dati per marketing) il conferimento è su base volontaria e il mancato conferimento non pregiudica l’erogazione del servizio principale.</p>
+                     
+                     <p><strong>11. Misure di sicurezza</strong><br>
+                     Il Titolare applica misure tecniche e organizzative adeguate alla protezione dei dati personali, tra cui:
+                     <ul class="legal-list">
+                        <li>utilizzo di protocolli cifrati (HTTPS/TLS) per le comunicazioni on-line;</li>
+                        <li>controllo degli accessi e gestione degli account con privilegi limitati;</li>
+                        <li>backup regolari e policy di retention;</li>
+                        <li>formazione e limitazione degli accessi al personale incaricato;</li>
+                        <li>obblighi contrattuali di riservatezza per i responsabili esterni.</li>
+                     </ul>
+                     Tali misure sono riesaminate periodicamente in funzione dell’evoluzione tecnologica e degli obblighi normativi.</p>
+
+                     <p><strong>12. Profilazione e decisioni automatizzate</strong><br>
+                     Il Titolare non effettua processi decisionali basati esclusivamente su trattamenti automatizzati che producano effetti giuridici significativi per l’interessato, né attività di profilazione su larga scala senza consenso esplicito. Qualora in futuro si prevedano tali trattamenti, sarà fornita adeguata informativa e, ove richiesto, sarà acquisito il consenso.</p>
+
+                     <p><strong>13. Aggiornamenti dell’informativa</strong><br>
+                     L’informativa può essere aggiornata per adeguarsi a modifiche normative o organizzative. La versione pubblicata sul sito web del Titolare contiene la data dell’ultimo aggiornamento: {DATA_REVISIONE}. Si raccomanda di consultare periodicamente la versione online.</p>
+
+                     <p><strong>14. Ulteriori informazioni e contatti</strong><br>
+                     Per esercitare i diritti, per richiedere informazioni aggiuntive o per presentare reclamo:
+                     <br>e-mail: matteo.masella@duemmeconsulting.it
+                     <br>indirizzo postale: Via Pietro Colletta 70, 20137 Milano
+                     <br>Per reclami indipendenti è possibile rivolgersi al Garante per la protezione dei dati personali: www.garanteprivacy.it.</p>`,
+                en: `<p><strong>Extended Information Notice pursuant to Regulation (EU) 2016/679 (GDPR)</strong></p>
+                     <p><strong>1. Data Controller</strong><br>
+                     The Data Controller is 2EMME RE&CONSULTING by Matteo Masella, with registered office at Via Pietro Colletta 70, 20137 Milan (VAT IT13411850962). For any communication regarding personal data processing, you can contact the Controller via e-mail: matteo.masella@duemmeconsulting.it or by mail at: Via Pietro Colletta 70, 20137 Milan.</p>
+                     
+                     <p><strong>2. Data Protection Officer (DPO)</strong><br>
+                     Currently, a Data Protection Officer (DPO) has not been appointed. For specific requests regarding data protection, contact the Controller at the contact details above.</p>
+                     
+                     <p><strong>3. Purposes of processing and legal bases</strong><br>
+                     The personal data collected are processed for the following purposes, with the corresponding legal basis:
+                     <ul class="legal-list">
+                        <li>Execution of the tourist rental contract (e.g., booking management, check-in/out, issuance of receipts/invoices, deposit management, management of requests and ancillary services). Legal basis: performance of a contract (Art. 6(1)(b) GDPR).</li>
+                        <li>Public security obligations: transmission of guest details to the Public Security Authority via the “Alloggiati Web” system pursuant to Art. 109 of the T.U.L.P.S. and subsequent operational provisions. Legal basis: legal obligation (Art. 6(1)(c) GDPR).</li>
+                        <li>Tax and accounting obligations: preservation and exhibition of accounting documents, issuance of invoices, and tax compliance. Legal basis: legal obligation (Art. 6(1)(c) GDPR).</li>
+                        <li>Protection of rights and property security: detection and management of damages, management of insurance claims and disputes. Legal basis: performance of the contract and legitimate interest of the Controller (Art. 6(1)(b) and 6(1)(f) GDPR).</li>
+                        <li>Commercial communications and direct marketing (newsletters, promotions): only with the express and separate consent of the data subject. Legal basis: consent (Art. 6(1)(a) GDPR).</li>
+                     </ul></p>
+
+                     <p><strong>4. Types of data processed</strong><br>
+                     Depending on the purpose, the following may be processed, among others:
+                     <ul class="legal-list">
+                        <li>identification data (name, surname, date and place of birth);</li>
+                        <li>data relating to the identity document (type, number, date, and issuing authority) necessary for Alloggiati Web and identity verification;</li>
+                        <li>tax code;</li>
+                        <li>contact data (postal address, e-mail address, phone number);</li>
+                        <li>contractual and booking data (arrival/departure dates, booking code, number of occupants);</li>
+                        <li>payment and accounting data (bank transfer details, receipts, transaction details) in non-sensitive form, unless otherwise necessary;</li>
+                        <li>any data provided voluntarily for special needs (allergies, special requests);</li>
+                        <li>photographic or documentary recordings relating to any damage (only if necessary for documentation and dispute activities).</li>
+                     </ul></p>
+                     
+                     <p><strong>5. Processing methods</strong><br>
+                     Data are processed using IT and/or paper tools, through organizational and logical procedures strictly related to the purposes indicated above. Suitable technical and organizational measures are adopted to guarantee the confidentiality, integrity, availability, and resilience of systems and services, including access control, management of accounts with limited privileges, backups, updates, use of encrypted connections for communications, and internal security policies.</p>
+
+                     <p><strong>6. Data recipients and categories of subjects who may become aware of the data</strong><br>
+                     Data may be communicated to:
+                     <ul class="legal-list">
+                        <li>Public security authorities (via Alloggiati Web) and public entities where required by law;</li>
+                        <li>Service providers necessary for the execution of the contract (e.g., booking platforms / OTAs, payment processing systems, cleaning and maintenance services) as data processors;</li>
+                        <li>Professional consultants (accountants, lawyers) and banking institutions for accounting and tax management needs;</li>
+                        <li>Third-party companies carrying out hosting, document storage, or technological support activities on behalf of the Controller;</li>
+                        <li>Judicial and administrative authorities in case of legitimate requests.</li>
+                     </ul>
+                     All external subjects receive data as Data Processors and are bound by appropriate contractual and confidentiality obligations.</p>
+
+                     <p><strong>7. International data transfers</strong><br>
+                     Should it be necessary to transfer data to third countries (non-EU), the Controller guarantees that the transfer will take place only to countries that ensure an adequate level of protection or through appropriate safeguards (adequacy decision, standard contractual clauses approved by the European Commission, binding corporate rules, or other measures compliant with the GDPR). Upon request, information on the safeguards adopted will be provided.</p>
+                     
+                     <p><strong>8. Retention periods</strong><br>
+                     Data will be kept for the time strictly necessary to achieve the purposes for which they were collected and within the limits imposed by applicable legislation:
+                     <ul class="legal-list">
+                        <li>tax and accounting documents and data: 10 years (e.g., tax and accounting obligations);</li>
+                        <li>data and documentation relating to Alloggiati Web communication and identity verification: kept in archives according to administrative practices and in any case for a period of not less than 5 years as good operational practice for evidentiary purposes in case of checks;</li>
+                        <li>data relating to damage disputes and causes: for the period necessary to settle the case and for legal prescription terms;</li>
+                        <li>data processed for marketing purposes: until consent is revoked.</li>
+                     </ul>
+                     At the end of the retention periods, data will be deleted or irreversibly anonymized, unless legal obligations require longer retention.</p>
+                     
+                     <p><strong>9. Rights of data subjects</strong><br>
+                     The data subject can exercise the rights provided for by Arts. 15-22 of the GDPR:
+                     <ul class="legal-list">
+                        <li>right of access to one's own personal data;</li>
+                        <li>right to rectification of inaccurate data;</li>
+                        <li>right to erasure (“right to be forgotten”) in the cases provided for;</li>
+                        <li>right to restriction of processing;</li>
+                        <li>right to data portability (when processing is based on consent or contract and data are processed by automated means);</li>
+                        <li>right to object to processing for legitimate reasons;</li>
+                        <li>right to lodge a complaint with the Supervisory Authority (Guarantor for the protection of personal data — www.garanteprivacy.it).</li>
+                     </ul>
+                     Requests must be addressed to the Controller at the e-mail address matteo.masella@duemmeconsulting.it or by mail at: Via Pietro Colletta 70, 20137 Milan. Requests will be handled in the terms and ways provided for by current legislation (usually within one month except for special cases).</p>
+                     
+                     <p><strong>10. Consequences of failure to provide data</strong><br>
+                     Providing the data necessary for the execution of the contract and for the fulfillment of legal obligations (e.g., Alloggiati Web submission) is mandatory. Failure to provide them may make it impossible to conclude or execute the contract (e.g., impossibility to check-in or host the data subject). For other optional data (e.g., data for marketing), provision is voluntary and failure to provide does not prejudice the provision of the main service.</p>
+                     
+                     <p><strong>11. Security measures</strong><br>
+                     The Controller applies adequate technical and organizational measures for the protection of personal data, including:
+                     <ul class="legal-list">
+                        <li>use of encrypted protocols (HTTPS/TLS) for online communications;</li>
+                        <li>access control and management of accounts with limited privileges;</li>
+                        <li>regular backups and retention policies;</li>
+                        <li>training and limitation of access to authorized personnel;</li>
+                        <li>contractual confidentiality obligations for external processors.</li>
+                     </ul>
+                     These measures are periodically reviewed according to technological evolution and regulatory obligations.</p>
+
+                     <p><strong>12. Profiling and automated decisions</strong><br>
+                     The Controller does not carry out decision-making processes based solely on automated processing that produce significant legal effects for the data subject, nor large-scale profiling activities without explicit consent. Should such processing be envisaged in the future, adequate information will be provided and, where required, consent will be acquired.</p>
+
+                     <p><strong>13. Updates to the notice</strong><br>
+                     The information notice may be updated to comply with regulatory or organizational changes. The version published on the Controller's website contains the date of the last update: {REVISION_DATE}. It is recommended to periodically consult the online version.</p>
+
+                     <p><strong>14. Further information and contacts</strong><br>
+                     To exercise rights, request additional information, or lodge a complaint:
+                     <br>e-mail: matteo.masella@duemmeconsulting.it
+                     <br>postal address: Via Pietro Colletta 70, 20137 Milan
+                     <br>For independent complaints, you can contact the Guarantor for the protection of personal data: www.garanteprivacy.it.</p>`,
+                es: `<p><strong>Aviso legal completo (RGPD)</strong></p><p>Traducción no disponible en breve.</p>`,
+                fr: `<p><strong>Avis juridique complet (RGPD)</strong></p><p>Traduction non disponible en bref.</p>`,
+                de: `<p><strong>Vollständiger Rechtshinweis (DSGVO)</strong></p><p>Übersetzung nicht in Kürze verfügbar.</p>`
+            },
+
+            // --- CHATBOT TEXTS ---
+            chatHeader: { it: "Assistente Virtuale", en: "Virtual Assistant", es: "Asistente Virtual", fr: "Assistant Virtuel", de: "Virtueller Assistent" },
+            chatPlaceholder: { it: "Scrivi la tua domanda qui...", en: "Type your question here...", es: "Escribe tu pregunta aquí...", fr: "Tapez votre question ici...", de: "Geben Sie hier Ihre Frage ein..." },
+            chatSend: { it: "Invia", en: "Send", es: "Enviar", fr: "Envoyer", de: "Senden" },
+            initialBotMessage: {
+                it: "Ciao! Posso darti informazioni sulla tassa di soggiorno (aumento nel 2026), i supplementi energetici (estate/inverno) o il contratto. Chiedi pure!",
+                en: "Hi! I can help with info on city tax (2026 increase), energy surcharges (summer/winter), or the contract. Just ask!",
+                es: "¡Hola! Puedo informarte sobre la tasa turística (aumento 2026), recargos energéticos o el contrato.",
+                fr: "Bonjour ! Je peux vous informer sur la taxe de séjour (augmentation 2026), les suppléments énergétiques ou le contrat.",
+                de: "Hallo! Ich kann Ihnen Infos zur Kurtaxe (Erhöhung 2026), Energiezuschlägen oder dem Vertrag geben."
+            }
+        };
+
+        const qaPairs = {
+            it: {
+                'tassa': "La tassa di soggiorno è attualmente €6,30. Dal 1° Gennaio 2026 aumenterà a €9,50 a persona/notte.",
+                'costo': "Tassa soggiorno €6,30 (in aumento a €9,50 nel 2026). Supplementi stagionali: 4% estate (elettricità), 5% inverno (riscaldamento).",
+                'supplemento': "Estate (15 Mag - 15 Set): 4% per elettricità. Inverno (15 Ott - 15 Mar): 5% per riscaldamento. Cap max €80 (€90 mensili). Servono per la transizione green.",
+                'elettricità': "Dal 15 Maggio al 15 Settembre c'è un supplemento del 4% (max €80) per coprire i costi di condizionamento e tecnologia green.",
+                'riscaldamento': "Dal 15 Ottobre al 15 Marzo c'è un supplemento del 5% (max €80) per il riscaldamento invernale.",
+                'contratto': "Il contratto si firma su Chekin. Include clausole oggetto di specifica approvazione (es. penali cancellazione, deposito).",
+                'deposito': "Scegli tra deposito €350 (somma bloccata, poi rilasciata) o polizza danni (es. €27,50 per €1.500 copertura).",
+                'rumore': "Il rumore è vietato dalle 21:00 alle 07:00.",
+                'pulizie': "Per soggiorni oltre le 3 settimane, è obbligatoria una pulizia ogni 12 giorni (penale €150).",
+                'acqua': "Negli appartamenti The NoLo Nest e The NoLo Studio il boiler è dimensionato per 2 docce. Apri l'acqua solo sotto la doccia: arriva subito calda.",
+                'fumo': "Vietato fumare. Penale €200.",
+                'cancellazione': "Policy Moderata: rimborso 100% fino a 14gg prima; 50% tra 14-7gg; 0% sotto i 7gg.",
+                'bonifico': "Accettiamo bonifici per prenotazioni dirette.",
+                'pagamento': "Accettiamo carte, bonifici (solo dirette) e pagamenti elettronici su richiesta."
+            },
+            en: {
+                'tax': "City tax is currently €6.30. It rises to €9.50 on Jan 1st, 2026.",
+                'surcharge': "Summer (May 15-Sept 15): 4% Electricity. Winter (Oct 15-Mar 15): 5% Heating. Max cap €80.",
+                'contract': "Signed via Chekin. Includes clauses subject to specific approval.",
+                'deposit': "Choose €350 holding deposit or damage waiver policy.",
+                'cleaning': "For stays > 3 weeks, cleaning every 12 days is mandatory.",
+                'water': "In The NoLo Nest and The NoLo Studio, boiler is sized for 2 showers. Hot water is instant, so don't waste it.",
+                'noise': "Noise is forbidden from 9 PM to 7 AM.",
+                'cancellation': "Moderate Policy: 100% refund >14 days; 50% 14-7 days; 0% <7 days."
+            },
+            es: { 'impuesto': "Actualmente 6,30 €. Sube a 9,50 € en 2026.", 'ruido': "Ruido prohibido 21:00-07:00.", 'contrato': "Cláusulas de aprobación específica en Chekin.", 'agua': "En The NoLo Nest y The NoLo Studio, el tanque es para 2 duchas." },
+            fr: { 'taxe': "Actuellement 6,30 €. Passe à 9,50 € en 2026.", 'bruit': "Bruit interdit 21h00-07h00.", 'contrat': "Clauses d'approbation spécifique sur Chekin.", 'eau': "Dans The NoLo Nest et The NoLo Studio, réservoir pour 2 douches." },
+            de: { 'steuer': "Derzeit 6,30 €. Ab 2026 dann 9,50 €.", 'lärm': "Lärm verboten 21:00-07:00.", 'vertrag': "Gesondert zu genehmigende Klauseln.", 'wasser': "In The NoLo Nest und The NoLo Studio reicht der Tank für 2 Duschen." }
+        };
+        
+        const defaultResponses = {
+            it: "Non ho trovato una risposta precisa. Prova: 'tassa', 'supplemento', 'contratto', 'rumore', 'deposito', 'cancellazione'.",
+            en: "I didn't understand. Try: 'tax', 'surcharge', 'contract', 'noise', 'deposit', 'cancellation'.",
+            es: "No entendí. Prueba: 'impuesto', 'contrato', 'ruido'.",
+            fr: "Pas compris. Essayez : 'taxe', 'contrat', 'bruit'.",
+            de: "Nicht verstanden. Versuchen Sie: 'Steuer', 'Vertrag', 'Lärm'."
+        };
+
+        let currentLang = 'it';
+        const chatBox = document.getElementById('chat-box');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        function updateLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`lang-${lang}`).classList.add('active');
+            
+            // Aggiorna testi statici
+            document.querySelectorAll('[data-key]').forEach(elem => {
+                const key = elem.dataset.key;
+                if (texts[key] && texts[key][lang]) {
+                    if (elem.tagName === 'INPUT') elem.placeholder = texts[key][lang];
+                    else if (elem.classList.contains('quick-grid')) elem.innerHTML = texts[key][lang];
+                    else elem.innerHTML = texts[key][lang];
+                }
+            });
+            
+            // Reset chat
+            chatBox.innerHTML = '';
+            appendMessage(texts.initialBotMessage[lang], 'bot-message');
+        }
+        
+        // Language Buttons Listeners
+        document.getElementById('lang-it').addEventListener('click', () => updateLanguage('it'));
+        document.getElementById('lang-en').addEventListener('click', () => updateLanguage('en'));
+        document.getElementById('lang-es').addEventListener('click', () => updateLanguage('es'));
+        document.getElementById('lang-fr').addEventListener('click', () => updateLanguage('fr'));
+        document.getElementById('lang-de').addEventListener('click', () => updateLanguage('de'));
+
+        // Accordion Logic
+        const accordions = document.getElementsByClassName("accordion");
+        for (let i = 0; i < accordions.length; i++) {
+            accordions[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                    panel.style.padding = "0 20px";
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                    panel.style.padding = "20px";
+                }
+            });
+        }
+
+        // Chatbot Logic
+        function handleUserInput() {
+            const userText = userInput.value.trim().toLowerCase();
+            if (userText === "") return;
+
+            appendMessage(userText, 'user-message');
+            userInput.value = "";
+
+            let botResponse = defaultResponses[currentLang];
+            const currentQaPairs = qaPairs[currentLang] || qaPairs['it']; // Fallback
+
+            for (const keyword in currentQaPairs) {
+                if (userText.includes(keyword)) {
+                    botResponse = currentQaPairs[keyword];
+                    break;
+                }
+            }
+            
+            setTimeout(() => {
+                appendMessage(botResponse, 'bot-message');
+            }, 500);
+        }
+
+        function appendMessage(text, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('chat-message', type);
+            const p = document.createElement('p');
+            p.textContent = text;
+            messageDiv.appendChild(p);
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        sendBtn.addEventListener('click', handleUserInput);
+        userInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') handleUserInput();
+        });
+        
+        // Initial setup
+        updateLanguage(currentLang);
+    });
+</script>
+
+</body>
+</html>
