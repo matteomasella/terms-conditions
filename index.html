@@ -2,710 +2,270 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2M Apartments - Policy & Terms</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2M Apartments - Regolamento Integrale 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* --- PALETTE DARK MODE ELEGANT --- */
-            --bg-dark-1: #021216; 
-            --bg-dark-2: #062c30; 
-            --brand-primary: #4FD1C5; /* Ciano */
-            --brand-accent: #FF6B6B;  /* Corallo */
-            --brand-gold: #FFD700;    /* Oro per Maximum Stay */
-            --brand-silver: #E0E0E0;  /* Argento per Extra Long */
-            --text-main: #f0f0f0;     
-            --text-muted: #b0bec5;    
-            --glass-container: rgba(10, 30, 35, 0.85); 
-            --glass-card: rgba(255, 255, 255, 0.05); 
-            --glass-border: rgba(255, 255, 255, 0.15); 
-            --shadow-soft: 0 10px 40px -10px rgba(0,0,0,0.6);
+            --bg-dark: #021216;
+            --text-main: #ffffff;
+            --text-muted: #8d9196;
+            --accent-green: #4FD1C5;
+            --accent-blue: #63B3ED;
+            --accent-orange: #F6AD55;
+            --accent-gold: #FFD700;
+            --border: rgba(255, 255, 255, 0.1);
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-blur: blur(25px);
         }
-        
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark-1));
-            background-attachment: fixed;
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 10% 10%, rgba(79, 209, 197, 0.07) 0%, transparent 40%);
             color: var(--text-main);
-            line-height: 1.6;
-            margin: 0;
-            padding: 15px;
-            min-height: 100vh;
-            -webkit-font-smoothing: antialiased;
+            margin: 0; padding: 15px;
+            display: flex; justify-content: center; align-items: flex-start; min-height: 100vh;
         }
 
-        .container {
-            max-width: 1100px; /* Allargato per contenere le 3 colonne */
-            margin: auto;
-            padding: 25px 30px 40px 30px;
-            border-radius: 24px;
-            background: var(--glass-container);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--shadow-soft);
-        }
-        
-        /* HEADER */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--glass-border);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .header-brand { display: flex; align-items: center; gap: 15px; flex: 1; }
-        .logo-img {
-            height: 90px; width: auto; object-fit: contain;
-            border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
-        }
-        h1 { color: #fff; margin: 0; font-size: 1.5em; font-weight: 700; letter-spacing: -0.5px; }
-        .header-controls { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
-
-        /* BUTTONS */
-        .switcher-group { display: flex; gap: 5px; background: rgba(0, 0, 0, 0.4); padding: 4px; border-radius: 30px; border: 1px solid var(--glass-border); }
-        .switch-btn {
-            background: transparent; border: none; color: var(--text-muted);
-            padding: 6px 14px; border-radius: 25px; cursor: pointer;
-            font-weight: 600; font-size: 0.9em; transition: all 0.2s ease;
-        }
-        .switch-btn.active {
-            background: var(--brand-primary); color: #002e33; 
-            box-shadow: 0 2px 10px rgba(79, 209, 197, 0.3);
-        }
-        .switch-btn:hover:not(.active) { color: #fff; }
-        .lang-btn { padding: 6px 10px; font-size: 0.85em; }
-
-        @media (max-width: 768px) {
-            .header { flex-direction: column; text-align: center; }
-            .header-brand { flex-direction: column; width: 100%; margin-bottom: 10px;}
-            .header-controls { align-items: center; width: 100%; }
-            .logo-img { height: 100px; margin-bottom: 5px; }
+        .glass-container {
+            background: var(--glass);
+            backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 30px;
+            width: 100%; max-width: 950px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
         }
 
-        /* QUICK GUIDE */
-        .quick-guide { background: var(--glass-card); border-radius: 16px; padding: 25px; margin-bottom: 35px; border: 1px solid var(--glass-border); }
-        .quick-guide h2 {
-            color: var(--brand-primary); margin-top: 0; font-size: 1.4em;
-            border-bottom: 1px solid var(--glass-border); padding-bottom: 10px; margin-bottom: 20px;
-            display: flex; align-items: center; gap: 10px;
-        }
-        .quick-intro { font-size: 1.05em; margin-bottom: 20px; font-style: italic; color: var(--text-muted); }
-        .quick-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .quick-item {
-            background: rgba(255, 255, 255, 0.03); padding: 12px 15px; border-radius: 12px;
-            display: flex; align-items: center; gap: 12px; border: 1px solid transparent;
-        }
+        /* TRADUTTORE */
+        #google_translate_element { margin-bottom: 20px; text-align: right; }
 
-        /* HOSPITALITY MODEL */
-        .energy-box { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); border-radius: 20px; padding: 30px; margin-top: 30px; }
-        .energy-box h3 {
-            color: var(--brand-primary); margin-top: 0; margin-bottom: 5px;
-            display: flex; align-items: center; gap: 15px; font-size: 1.5em;
-        }
-        .energy-subtitle {
-            font-size: 1em; color: var(--text-muted); font-weight: 500; margin-bottom: 30px;
-            text-transform: uppercase; letter-spacing: 1px; margin-left: 54px;
-        }
-        .hospitality-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; margin-bottom: 25px; }
-        .feature-card {
-            background: rgba(255, 255, 255, 0.06); padding: 20px; border-radius: 16px;
-            border: 1px solid var(--glass-border); display: flex; align-items: center; gap: 15px; transition: background 0.3s;
-        }
-        .feature-card.inclusive { background: rgba(242, 92, 84, 0.1); border-color: rgba(242, 92, 84, 0.3); }
-        .feature-text { font-weight: 600; color: #fff; margin: 0; font-size: 1.05em; line-height: 1.3; }
-        
-        /* ICONS */
-        .glass-icon-wrapper {
-            width: 48px; height: 48px; border-radius: 50%;
-            background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
-            border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2); color: var(--brand-primary); flex-shrink: 0; cursor: default;
-        }
-        .feature-card.inclusive .glass-icon-wrapper { color: var(--brand-accent); background: linear-gradient(135deg, rgba(242,92,84,0.2), rgba(242,92,84,0.05)); border-color: rgba(242,92,84,0.3); }
-        .glass-icon-wrapper svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-        .quick-item .glass-icon-wrapper { width: 32px; height: 32px; border-radius: 8px; }
-        .quick-item .glass-icon-wrapper svg { width: 18px; height: 18px; }
-        .accordion-icon-wrapper {
-            width: 32px; height: 32px; border-radius: 8px; background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;
-            margin-right: 15px; color: var(--brand-primary); flex-shrink: 0;
-        }
-        .accordion-icon-wrapper svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        h2.section-header { font-size: 26px; font-weight: 800; margin-bottom: 30px; text-align: center; color: var(--accent-green); }
 
-        .accessibility-note {
-            background: rgba(0, 0, 0, 0.3); border: 1px solid var(--glass-border); border-radius: 12px;
-            padding: 20px; font-size: 0.95em; color: var(--text-muted); display: flex; gap: 15px; align-items: flex-start;
-        }
-        .accessibility-note strong { color: #fff; }
-        .accessibility-note .glass-icon-wrapper { width: 36px; height: 36px; border-radius: 50%; color: #3498db; }
+        .policy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 35px; }
+        @media (min-width: 768px) { .policy-grid { grid-template-columns: repeat(4, 1fr); } }
 
-        /* --- TIERS PER LONG STAY (3 COLONNE) --- */
-        .tiers-container { display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
-        .tier-box {
-            flex: 1; min-width: 260px; 
-            background: rgba(255,255,255,0.03); 
-            border: 1px solid var(--glass-border);
-            border-radius: 12px; padding: 20px;
-            display: flex; flex-direction: column;
-        }
-        .tier-box h4 { margin-top: 0; color: #fff; font-size: 1.2em; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;}
-        .tier-box ul { padding-left: 15px; font-size: 0.95em; flex-grow: 1; }
-        .tier-box li { margin-bottom: 10px; }
-        
-        /* Tier Extra Long (Silver) */
-        .tier-box.extra { border: 1px solid var(--brand-silver); background: linear-gradient(145deg, rgba(224, 224, 224, 0.05), rgba(0,0,0,0)); }
-        .tier-box.extra h4 { color: var(--brand-silver); }
+        .policy-card { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: 20px; padding: 20px; }
+        .card-header { font-size: 16px; font-weight: 700; margin-bottom: 5px; }
+        .card-subheader { font-size: 10px; color: var(--text-muted); font-weight: 800; margin-bottom: 15px; text-transform: uppercase; }
 
-        /* Tier Maximum (Gold) */
-        .tier-box.premium { background: linear-gradient(145deg, rgba(255, 215, 0, 0.1), rgba(0,0,0,0)); border: 1px solid var(--brand-gold); }
-        .tier-box.premium h4 { color: var(--brand-gold); }
-        
-        .free-badge { background: var(--brand-gold); color: #000; font-weight: bold; padding: 2px 6px; border-radius: 4px; font-size: 0.8em; margin-left: 5px; text-transform: uppercase; }
-        .half-badge { background: var(--brand-silver); color: #000; font-weight: bold; padding: 2px 6px; border-radius: 4px; font-size: 0.8em; margin-left: 5px; text-transform: uppercase; }
+        #standard .card-header { color: var(--accent-green); }
+        #long .card-header { color: var(--accent-blue); }
+        #extra .card-header { color: var(--accent-orange); }
+        #smart .card-header { color: var(--accent-gold); }
 
-        .transition-note {
-            text-align: center; margin: 40px 0 20px 0; font-weight: 700; color: var(--brand-primary);
-            font-size: 0.95em; text-transform: uppercase; letter-spacing: 1.5px;
-        }
+        .benefit-tag { font-size: 11px; color: #fff; background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; display: inline-block; margin-top: 10px; font-weight: 600; }
 
-        /* ACCORDION */
-        .accordion {
-            background: rgba(255, 255, 255, 0.05); color: #fff; cursor: pointer; padding: 20px 25px; width: 100%;
-            border: 1px solid var(--glass-border); text-align: left; outline: none; font-size: 1.1em;
-            transition: background 0.3s; border-radius: 12px; margin-top: 12px; font-weight: 600; display: flex; align-items: center;
-        }
-        .accordion-title-container { display: flex; align-items: center; flex-grow: 1; }
-        .accordion:hover { background: rgba(255, 255, 255, 0.08); border-color: var(--brand-primary); }
-        .accordion.active {
-            background: rgba(79, 209, 197, 0.15); color: var(--brand-primary);
-            border-radius: 12px 12px 0 0; border-color: var(--brand-primary); border-bottom: none;
-        }
-        .accordion .icon { font-size: 1.2em; margin-left: 10px;}
-        .accordion .icon:after { content: '+'; }
-        .accordion.active .icon:after { content: '−'; }
-        
-        .panel {
-            padding: 0 25px; background: rgba(0, 0, 0, 0.2); max-height: 0; overflow: hidden;
-            transition: max-height 0.4s ease-out, padding 0.4s ease-out; border: 1px solid var(--brand-primary);
-            border-top: none; border-radius: 0 0 12px 12px; color: var(--text-muted);
-        }
-        .panel h2, .panel h3 { color: var(--brand-accent); margin-top: 25px; margin-bottom: 10px; font-size: 1.1em; font-weight: 700; }
-        .panel p { margin-bottom: 15px; }
-        .panel ul { list-style-type: none; padding-left: 0; }
-        .panel li { margin-bottom: 12px; padding-left: 25px; position: relative; }
-        .panel li::before { content: '•'; color: var(--brand-primary); position: absolute; left: 0; font-weight: bold; font-size: 1.2em; }
-        
-        .important-note {
-            background: rgba(242, 92, 84, 0.15); border-left: 3px solid var(--brand-accent);
-            padding: 15px; margin: 20px 0; border-radius: 6px; font-size: 0.95em; color: #fff;
-        }
-        .warning-text {
-            color: #ff8a80; font-weight: bold; margin-top: 15px; border: 1px solid #ff8a80;
-            padding: 12px; border-radius: 8px; background: rgba(255, 0, 0, 0.1);
-        }
-        .clawback-warning {
-             margin-top: 15px; font-size: 0.9em; border: 1px solid #ffd700; color: #fff;
-             background: rgba(255, 215, 0, 0.1); padding: 12px; border-radius: 8px;
-        }
+        .simulator-section { background: rgba(0, 0, 0, 0.25); border: 1px solid var(--border); border-radius: 22px; padding: 30px; display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 40px; }
+        .controls-col { flex: 1.2; min-width: 300px; }
+        .results-col { flex: 0.8; min-width: 250px; border-left: 1px solid var(--border); padding-left: 30px; text-align: right; }
+        .days-value { float: right; color: #fff; font-weight: 800; font-size: 18px; }
+        .dropdown { background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 12px; color: #fff; padding: 14px; width: 100%; font-family: inherit; margin-bottom: 15px; }
+        .price-breakdown { font-size: 14px; color: var(--text-muted); line-height: 2.2; }
+        .price-breakdown span { color: #fff; font-weight: 600; }
+        .total-price { font-size: 34px; font-weight: 800; color: var(--accent-green); margin-top: 15px; border-top: 1px solid var(--border); padding-top: 15px;}
 
-        /* CHATBOT */
-        #chat-container { margin-top: 50px; border-radius: 20px; overflow: hidden; background: var(--glass-container); border: 1px solid var(--glass-border); }
-        #chat-header { background: rgba(0, 0, 0, 0.3); color: var(--brand-primary); padding: 15px; text-align: center; font-size: 1.1em; font-weight: bold; border-bottom: 1px solid var(--glass-border); }
-        #chat-box { height: 300px; overflow-y: auto; padding: 20px; background-color: transparent; display: flex; flex-direction: column; gap: 15px; }
-        .chat-message { padding: 10px 16px; border-radius: 18px; max-width: 85%; word-wrap: break-word; font-size: 0.95em; }
-        .user-message { background-color: var(--brand-primary); color: #003333; align-self: flex-end; border-bottom-right-radius: 2px; }
-        .bot-message { background: rgba(255, 255, 255, 0.1); color: #fff; align-self: flex-start; border: 1px solid rgba(255,255,255,0.1); border-bottom-left-radius: 2px; }
-        #chat-input-container { display: flex; padding: 15px; border-top: 1px solid var(--glass-border); background-color: rgba(0,0,0,0.2); }
-        #user-input { flex-grow: 1; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); padding: 12px 18px; border-radius: 25px; margin-right: 10px; font-size: 1em; color: #fff; }
-        #user-input:focus { outline: none; border-color: var(--brand-primary); background: rgba(255,255,255,0.1); }
-        #send-btn { background-color: var(--brand-primary); color: #004D54; border: none; padding: 0 20px; border-radius: 25px; cursor: pointer; font-weight: bold; }
-        
-        @media (max-width: 768px) {
-            .hospitality-grid { grid-template-columns: 1fr; }
-            .accessibility-note { flex-direction: column; text-align: center; align-items: center; }
-            .feature-card { flex-direction: row; text-align: left; }
-            .energy-subtitle { margin-left: 0; }
-            .tiers-container { flex-direction: column; }
-        }
-
-        /* --- STILE DI STAMPA PDF --- */
-        @media print {
-            body * { visibility: hidden; }
-            body { background: white !important; color: #000 !important; margin: 0; padding: 0; font-family: 'Times New Roman', serif; }
-            #print-area, #print-area * { visibility: visible; }
-            #print-area { position: absolute; left: 0; top: 0; width: 100%; padding: 30px; box-sizing: border-box; }
-            .pdf-header { text-align: center; border-bottom: 2px solid #004D54; margin-bottom: 15px; padding-bottom: 5px; }
-            .pdf-logo { height: 50px; display: block; margin: 0 auto 5px auto; }
-            .pdf-title { font-size: 18px; font-weight: bold; color: #004D54; text-transform: uppercase; }
-            .pdf-meta { font-size: 11px; color: #666; margin-bottom: 15px; text-align: center; }
-            .pdf-section { margin-bottom: 15px; }
-            .pdf-section-title { font-size: 12px; font-weight: bold; color: #004D54; border-bottom: 1px solid #ccc; margin-top: 10px; margin-bottom: 5px; text-transform: uppercase; }
-            .pdf-content { font-size: 10px; line-height: 1.3; text-align: justify; }
-            .pdf-content ul { padding-left: 15px; margin-top: 2px; }
-            .pdf-content li { margin-bottom: 2px; }
-            .pdf-table { width: 100%; border-collapse: collapse; margin-top: 5px; font-size: 10px; }
-            .pdf-table th, .pdf-table td { border: 1px solid #ccc; padding: 4px; text-align: left; vertical-align: top; }
-            .pdf-table th { background-color: #f0f0f0; color: #004D54; font-weight: bold; }
-            .pdf-footer { margin-top: 30px; padding-top: 10px; border-top: 1px solid #000; font-size: 8px; text-align: center; color: #555; }
-            
-            #chat-container, .header-controls, button, .quick-guide, .header, .transition-note, .accordion, .panel { display: none !important; }
-        }
+        .accordion { background: rgba(255, 255, 255, 0.04); color: #fff; cursor: pointer; padding: 22px; width: 100%; border: 1px solid var(--border); border-radius: 16px; margin-top: 15px; font-weight: 700; display: flex; align-items: center; justify-content: space-between; font-size: 17px; text-align: left; }
+        .panel { padding: 0 25px; background: rgba(0, 0, 0, 0.15); max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; border-radius: 0 0 16px 16px; font-size: 15px; line-height: 1.8; color: var(--text-muted); }
+        .panel-inner { padding: 30px 0; }
+        .panel-inner strong { color: #fff; }
+        .privacy-item { margin-bottom: 15px; display: block; }
+        .privacy-item b { color: var(--accent-green); margin-right: 5px; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <div class="header-brand">
-            <img src="logo.png" alt="2EMME Apartments Logo" class="logo-img">
-            <h1 data-key="mainTitle">Welcome & Policy</h1>
+<div class="glass-container">
+    <div id="google_translate_element"></div>
+
+    <h2 class="section-header">Modelli di Soggiorno 2026</h2>
+
+    <div class="policy-grid">
+        <div class="policy-card" id="standard">
+            <div class="card-header">Standard Stay</div>
+            <div class="card-subheader">1 - 13 NOTTI</div>
+            <div style="font-size:12px; color:var(--text-muted)">Utenze: Incluse<br>Surcharge: CAP 80 Euro</div>
+            <div class="benefit-tag">Standard Access</div>
         </div>
-        
-        <div class="header-controls">
-            <div class="switcher-group">
-                <button class="switch-btn active" id="stay-short">Short Stay</button>
-                <button class="switch-btn" id="stay-long">Long / Max</button>
+        <div class="policy-card" id="long">
+            <div class="card-header">Long Stay</div>
+            <div class="card-subheader">14 - 29 NOTTI</div>
+            <div style="font-size:12px; color:var(--text-muted)">ADR: -5% Sconto<br>Pulizia: 80,00 Euro</div>
+            <div class="benefit-tag" style="color:var(--accent-blue)">Welcome Soft Drink</div>
+        </div>
+        <div class="policy-card" id="extra">
+            <div class="card-header">Extra Long</div>
+            <div class="card-subheader">30 - 60 NOTTI</div>
+            <div style="font-size:12px; color:var(--text-muted)">ADR: -10% Sconto<br>Forfait Ut: 90/mese</div>
+            <div class="benefit-tag" style="color:var(--accent-orange)">Spirit Welcome Kit</div>
+        </div>
+        <div class="policy-card" id="smart">
+            <div class="card-header">Smart Resident</div>
+            <div class="card-subheader">61 - 90 NOTTI</div>
+            <div style="font-size:12px; color:var(--text-muted)">ADR: -18% Sconto<br>Registro: Gratis</div>
+            <div class="benefit-tag" style="color:var(--accent-gold)">Private Parking</div>
+        </div>
+    </div>
+
+    <div class="simulator-section">
+        <div class="controls-col">
+            <div style="font-weight:700; margin-bottom:20px; color:#fff;">SIMULATORE DINAMICO (ADR 80 Euro)</div>
+            <div style="margin-bottom:25px;">
+                <label style="font-size:14px; color:var(--text-muted);">Notti: <span class="days-value" id="days-display">30</span></label>
+                <input type="range" id="days-slider" min="1" max="90" value="30" style="width:100%; accent-color:var(--accent-green);" oninput="calculate()">
             </div>
-            <div class="switcher-group">
-                <button class="switch-btn lang-btn active" id="lang-it">IT</button>
-                <button class="switch-btn lang-btn" id="lang-en">EN</button>
-                <button class="switch-btn lang-btn" id="lang-es">ES</button>
-                <button class="switch-btn lang-btn" id="lang-fr">FR</button>
-                <button class="switch-btn lang-btn" id="lang-de">DE</button>
-                <button class="switch-btn lang-btn" id="lang-pt">PT</button>
+            <select class="dropdown" id="season-select" onchange="calculate()">
+                <option value="0.04">Periodo Estivo (+4% Surcharge)</option>
+                <option value="0.05">Periodo Invernale (+5% Surcharge)</option>
+            </select>
+            <select class="dropdown" id="pay-mode" onchange="calculate()">
+                <option value="1">Pagamento Settimanale (ADR Base)</option>
+                <option value="0.9">Pagamento Mensile (-10% Sconto)</option>
+                <option value="0.85">Totale Anticipato (-15% Sconto)</option>
+            </select>
+        </div>
+        <div class="results-col">
+            <div class="price-breakdown">
+                Soggiorno (<span id="res-days">30</span> nt): <span>Euro <span id="stay-cost">0.00</span></span><br>
+                Sconti Totali: <span style="color:var(--accent-green);">- Euro <span id="total-discount-val">0.00</span></span><br>
+                Utenze / Surcharge: <span>Euro <span id="util-cost">0.00</span></span><br>
+                Pulizia Finale: <span>Euro <span id="cleaning-cost">0.00</span></span><br>
+                Tassa e Oneri: <span>Euro <span id="tax-cost">0.00</span></span><br>
+                Benefit: <span id="benefit-display" style="color:var(--accent-green); font-weight:700;">Spirit Kit</span>
             </div>
+            <div class="total-price">Euro <span id="final-total">0.00</span></div>
         </div>
     </div>
 
-    <div style="text-align: center; margin-bottom: 20px;">
-        <button onclick="generatePDF()" style="background-color: var(--brand-accent); color: white; border: none; padding: 10px 20px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.2s;">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            Scarica Termini (PDF)
-        </button>
-    </div>
+    <div class="regolamento-box">
+        <button class="accordion">1. Costi, Pagamenti e Sconti Esclusivi <span>+</span></button>
+        <div class="panel"><div class="panel-inner">
+            <p><strong>Soggiorni Inferiori a 30 Notti (Standard e Long Stay):</strong> Il modello prevede il saldo totale anticipato dell'intero periodo di soggiorno. Alla conferma della prenotazione è richiesto il versamento di una caparra pari al 30 per cento del totale, mentre il restante 70 per cento deve essere saldato tassativamente 14 giorni prima della data di arrivo. La Tassa di Soggiorno (9,50 Euro a persona per notte, applicabile per un massimo di 14 giorni consecutivi dal 1 Gennaio 2026) e il Costo Fisso di Servizio (15,00 Euro per soggiorno) sono esclusi dal canone di locazione.</p>
+            <p><strong>Soggiorni Superiori a 30 Notti (Extra Long e Resident):</strong> Oltre allo sconto base già applicato alla tariffa notte (10 per cento per Extra Long / 18 per cento per Resident), l'ospite può scegliere tra tre diverse modalità di pagamento: Pagamento Settimanale (nessun extra sconto), Pagamento Mensile (ulteriore -10%), Saldo Totale Anticipato (ulteriore -15%).</p>
+        </div></div>
 
-    <div id="print-area"></div>
+        <button class="accordion">2. Regole della Casa (Dettaglio) e Penali <span>+</span></button>
+        <div class="panel"><div class="panel-inner">
+            <p><strong>Solo Ospiti Registrati:</strong> Per mantenere un ambiente sicuro e confortevole per tutti, ti preghiamo di far alloggiare nell'appartamento solo le persone ufficialmente registrate. La violazione comporta l'allontanamento immediato.</p>
+            <p><strong>Solo Aria Fresca (Vietato Fumare):</strong> Ci teniamo a mantenere la nostra casa fresca e piacevole. Ti chiediamo gentilmente di non fumare all'interno dell'appartamento. Penale 200,00 Euro più costi effettivi di rimozione odori.</p>
+            <p><strong>Niente Amici a 4 Zampe:</strong> Per quanto amiamo gli animali, questo appartamento non è adatto ad ospitarli, anche per tutelare chi soffre di allergie.</p>
+            <p><strong>Orari di Riposo:</strong> Massimo rispetto della quiete dalle 23:00 alle 08:00. In questa fascia oraria è severamente vietato l'uso di elettrodomestici rumorosi (lavatrice, asciugatrice, ecc.) per non disturbare il vicinato.</p>
+            <p><strong>Attenzione al WC (Sanitrit):</strong> Il bagno di The NoLo Nest utilizza uno speciale sistema trituratore. Ti preghiamo di gettare nel WC solo carta igienica. Salviettine o altri oggetti bloccano il sistema e i costi di ripristino tecnico saranno addebitati integralmente all'ospite.</p>
+            <p><strong>Check-Out:</strong> Il check-out è previsto tassativamente entro le ore 11:00.</p>
+        </div></div>
 
-    <div class="quick-guide">
-        <h2 data-key="quickTitle"><div class="accordion-icon-wrapper" style="margin-right:10px;"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>Quick Guide & House Rules</h2>
-        <div class="quick-grid" data-key="quickGrid"></div>
-    </div>
+        <button class="accordion">3. Servizio di Pulizia e Igiene <span>+</span></button>
+        <div class="panel"><div class="panel-inner">
+            <p>Per tutte le permanenze superiori a 13 notti, la pulizia intermedia con cambio biancheria è obbligatoria ogni 14 giorni al costo di 40,00 Euro.</p>
+            <p><strong>Ripartizione dei costi per soggiorni oltre le 30 notti:</strong> Mese 1: Interamente a carico dell'ospite. Mese 2: Il costo è diviso al 50 per cento tra l'ospite e il Locatore. Mese 3 e successivi: Interamente a carico di 2EMME RE&CONSULTING. Pulizia Finale fissa di 80,00 Euro per soggiorni lunghi.</p>
+        </div></div>
 
-    <div class="energy-box">
-        <h3 data-key="hospitalityTitle"><div class="glass-icon-wrapper" style="margin:0;"><svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 10c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></div>Il nostro modello di ospitalità</h3>
-        <div class="energy-subtitle" data-key="hospitalitySubtitle">Accoglienza responsabile, sostenibile e inclusiva</div>
-        <div class="hospitality-grid"></div>
-        <div class="accessibility-note"><div class="glass-icon-wrapper" style="width:36px; height:36px; color:#3498db; margin:0;"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div><div data-key="accessibilityText"></div></div>
-    </div>
+        <button class="accordion">4. Politica Energetica, Fair Use e Overuse <span>+</span></button>
+        <div class="panel"><div class="panel-inner">
+            <p><strong>Climatizzazione:</strong> Minimo 20 gradi Celsius a finestre chiuse. Spegnere sempre luci e clima prima di uscire. <strong>Riscaldamento:</strong> Massimo 20 gradi Celsius come da ordinanza comunale. <strong>Acqua Calda:</strong> Boiler elettrico da 50 litri (uso parsimonioso).</p>
+            <p><strong>Forfait Utenze:</strong> 80,00 Euro per i primi 30 giorni, successivamente 3,00 Euro al giorno (fino a un massimo di altri 90,00 Euro al mese).</p>
+            <p><strong>Soglie Fair Use Estate:</strong> Nest/Suite 240 kWh/mese - Studio/Terrace 180 kWh/mese - Heritage 90 kWh/mese.</p>
+            <p><strong>Soglie Fair Use Inverno:</strong> Nest 750 scatti + 180 kWh - Suite 600 scatti + 180 kWh - Studio 420 scatti + 150 kWh. <strong>Overuse:</strong> Luce 0,80 Euro/kWh, Riscaldamento 0,35 Euro/scatto.</p>
+        </div></div>
 
-    <div class="transition-note" data-key="transitionText">⬇️ Per dettagli legali, clausole e costi completi, espandi le sezioni qui sotto ⬇️</div>
+        <button class="accordion">5. Diversity e Inclusion (D&I) <span>+</span></button>
+        <div class="panel"><div class="panel-inner">
+            <p>In 2EMME RE&CONSULTING crediamo che l'ospitalità debba creare uno spazio sicuro, rispettoso e inclusivo per chiunque, indipendentemente dal genere, dall'orientamento sessuale, dalla razza, dalla religione o dalle abilità fisiche.</p>
+            <p><strong>Politica della Non Violenza:</strong> Non tolleriamo alcuna forma di aggressione, sia essa fisica, verbale o psicologica, all'interno dei nostri immobili o nei confronti del personale, degli ospiti e del vicinato. Vige il divieto assoluto di ogni atto discriminatorio.</p>
+        </div></div>
 
-    <button class="accordion">
-        <div class="accordion-title-container"><div class="accordion-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></div><span data-key="paymentTitle">Prenotazioni Dirette: Pagamenti & Cancellazione</span></div><span class="icon"></span>
-    </button>
-    <div class="panel" data-key="paymentContent"></div>
+        <button class="accordion">6. Recesso Anticipato e Rimborsi <span>+</span></button>
+        <div class="panel"><div class="panel-inner">
+            <p><strong>La Regola del Mercoledì:</strong> La comunicazione di disdetta deve essere inviata formalmente. Il conteggio dei termini parte dal primo mercoledì utile successivo alla comunicazione. <strong>Termini di Rilascio:</strong> L'immobile dovrà essere riconsegnato libero decorse 10 giornate dalla data del mercoledì di riferimento. <strong>Penale:</strong> Pari a 1 settimana (7 giorni) di soggiorno.</p>
+        </div></div>
 
-    <button class="accordion">
-        <div class="accordion-title-container"><div class="accordion-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.86 0 .92-.81 1.67-2.19 1.67-1.55 0-2.18-.83-2.24-1.84h-1.71c.09 1.78 1.13 2.66 2.68 3.01V20h2v-1.81c1.99-.24 2.83-1.53 2.83-2.91 0-2.09-1.5-2.87-3.79-3.42z"/></svg></div><span data-key="costsTitle">Costi, Tasse e Depositi</span></div><span class="icon"></span>
-    </button>
-    <div class="panel"><div id="costs-container-target"></div></div>
-
-    <button class="accordion"><div class="accordion-title-container"><div class="accordion-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg></div><span data-key="rulesTitle">Regole della Casa</span></div><span class="icon"></span></button>
-    <div class="panel"><ul data-key="rulesList"></ul></div>
-
-    <button class="accordion"><div class="accordion-title-container"><div class="accordion-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66l.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg></div><span data-key="greenTitle">Politica Ecologica</span></div><span class="icon"></span></button>
-    <div class="panel"><ul data-key="greenList"></ul></div>
-
-    <button class="accordion"><div class="accordion-title-container"><div class="accordion-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg></div><span data-key="visionTitle">D&I e Vision</span></div><span class="icon"></span></button>
-    <div class="panel"><div data-key="visionContent"></div></div>
-    
-    <button class="accordion"><div class="accordion-title-container"><div class="accordion-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div><span data-key="damageTitle">Deposito e Polizza</span></div><span class="icon"></span></button>
-    <div class="panel" data-key="damageDetails"></div>
-
-    <button class="accordion"><div class="accordion-title-container"><div class="accordion-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg></div><span data-key="contractTitle">Contratto</span></div><span class="icon"></span></button>
-    <div class="panel"><div data-key="contractContent"></div></div>
-
-    <button class="accordion"><div class="accordion-title-container"><div class="accordion-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg></div><span data-key="privacyTitle">Privacy</span></div><span class="icon"></span></button>
-    <div class="panel" data-key="privacyContent"></div>
-
-    <div id="chat-container">
-        <div id="chat-header" data-key="chatHeader">Assistente Virtuale</div>
-        <div id="chat-box"></div>
-        <div id="chat-input-container">
-            <input type="text" id="user-input" data-key="chatPlaceholder" placeholder="Scrivi la tua domanda qui...">
-            <button id="send-btn" data-key="chatSend">Invia</button>
-        </div>
+        <button class="accordion">7. Informativa Privacy e GDPR (14 Punti Integrali) <span>+</span></button>
+        <div class="panel"><div class="panel-inner">
+            <span class="privacy-item"><b>1. Titolare:</b> 2EMME RE&CONSULTING di Matteo Masella, Via Pietro Colletta 70, Milano. P.IVA IT13411850962. matteo.masella@duemmeconsulting.it.</span>
+            <span class="privacy-item"><b>2. DPO:</b> Al momento non è stato nominato un Responsabile della Protezione dei Dati.</span>
+            <span class="privacy-item"><b>3. Finalità:</b> Esecuzione contratto di locazione; Pubblica Sicurezza (Alloggiati Web - art. 109 TULPS); Obblighi fiscali; Tutela del patrimonio immobiliare; Marketing (solo con consenso).</span>
+            <span class="privacy-item"><b>4. Tipologie dati:</b> Identificativi, documenti, contatti, dati di pagamento, documentazione danni.</span>
+            <span class="privacy-item"><b>5. Modalità:</b> Trattamento tramite strumenti informatici protetti da HTTPS/TLS e backup regolari.</span>
+            <span class="privacy-item"><b>6. Destinatari:</b> Autorità di Pubblica Sicurezza, istituti bancari, commercialisti, gestori tecnici.</span>
+            <span class="privacy-item"><b>7. Estero:</b> I dati non vengono trasferiti fuori dall'UE se non verso paesi con protezione garantita.</span>
+            <span class="privacy-item"><b>8. Conservazione:</b> 10 anni per obblighi fiscali; 5 anni per registri di Pubblica Sicurezza.</span>
+            <span class="privacy-item"><b>9. Diritti:</b> Accesso, rettifica, cancellazione (oblio), reclamo al Garante Privacy.</span>
+            <span class="privacy-item"><b>10. Conferimento:</b> Obbligatorio per legge e contratto. Il rifiuto impedisce il soggiorno.</span>
+            <span class="privacy-item"><b>11. Sicurezza:</b> Protocolli crittografici e controllo accessi rigoroso.</span>
+            <span class="privacy-item"><b>12. Profilazione:</b> Non viene effettuata profilazione automatizzata su larga scala.</span>
+            <span class="privacy-item"><b>13. Aggiornamenti:</b> Versione Gennaio 2026.</span>
+            <span class="privacy-item"><b>14. Contatti:</b> matteo.masella@duemmeconsulting.it.</span>
+        </div></div>
     </div>
 </div>
 
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'it'}, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const icons = {
-            users: '<div class="glass-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>',
-            noSmoke: '<div class="glass-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-4h2v-2h-2v2zm0-4h2V7h-2v5z"/></svg></div>', 
-            paw: '<div class="glass-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-2h2v2zm0-4H9V7h2v6zm4 4h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>', 
-            moon: '<div class="glass-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M9 2c-1.05 0-2.05.16-3 .46 2.89 1.14 4.97 3.96 4.97 7.29 0 4.29-3.48 7.78-7.78 7.78-1.42 0-2.75-.41-3.89-1.12C.36 18.78 3.12 22 7.5 22c5.8 0 10.5-4.7 10.5-10.5S13.3 2 7.5 2z"/></svg></div>',
-            party: '<div class="glass-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/></svg></div>', 
-            recycle: '<div class="glass-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M7 19l4.43-12.75 4.57 12.75H7z" fill="none" stroke="currentColor"/><path d="M7.44 19L12 6.31 16.56 19H7.44zM12 2L2 22h20L12 2z"/></svg></div>',
-            toilet: '<div class="glass-icon-wrapper"><svg viewBox="0 0 24 24"><path d="M9 21h6v-2H9v2zm3-4c4.42 0 8-3.58 8-8V5H4v4c0 4.42 3.58 8 8 8z"/></svg></div>'
+    function calculate() {
+        const days = parseInt(document.getElementById('days-slider').value);
+        const seasonRate = parseFloat(document.getElementById('season-select').value);
+        const payMult = parseFloat(document.getElementById('pay-mode').value);
+        document.getElementById('days-display').innerText = days;
+        document.getElementById('res-days').innerText = days;
+
+        const adrBase = 80;
+        let adrDiscPercent = 0; let clean = 45; let util = 0; let benefit = "Standard Access";
+        let tax = 9.5 * Math.min(days, 14);
+
+        if (days >= 14 && days < 30) { 
+            adrDiscPercent = 0.05; clean = 80; benefit = "Welcome Soft Drink";
+        } else if (days >= 30 && days < 61) { 
+            adrDiscPercent = 0.10; clean = 80; benefit = "Spirit Welcome Kit";
+        } else if (days >= 61) { 
+            adrDiscPercent = 0.18; clean = 80; benefit = "Private Parking Included";
+        }
+
+        const stayGross = adrBase * days;
+        const adrDiscountVal = stayGross * adrDiscPercent;
+        const netBase = stayGross - adrDiscountVal;
+
+        if (days < 30) {
+            util = Math.min(netBase * seasonRate, 80);
+            document.getElementById('pay-mode').disabled = true;
+            document.getElementById('pay-mode').value = "1";
+        } else {
+            let fullMonths = Math.floor(days / 30);
+            let extraDays = days % 30;
+            util = 80 + (Math.max(0, fullMonths - 1) * 90) + (extraDays * 3);
+            document.getElementById('pay-mode').disabled = false;
+        }
+
+        let stayFinal = netBase;
+        if (days >= 30) stayFinal = netBase * payMult;
+
+        const totalDiscounts = adrDiscountVal + (netBase - stayFinal);
+        const total = stayFinal + util + clean + 15 + tax;
+
+        document.getElementById('stay-cost').innerText = stayGross.toFixed(2);
+        document.getElementById('total-discount-val').innerText = totalDiscounts.toFixed(2);
+        document.getElementById('util-cost').innerText = util.toFixed(2);
+        document.getElementById('cleaning-cost').innerText = clean.toFixed(2);
+        document.getElementById('tax-cost').innerText = (tax + 15).toFixed(2);
+        document.getElementById('benefit-display').innerText = benefit;
+        document.getElementById('final-total').innerText = total.toFixed(2);
+    }
+
+    document.querySelectorAll('.accordion').forEach(acc => {
+        acc.onclick = function() {
+            this.classList.toggle('active');
+            const panel = this.nextElementSibling;
+            panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
         };
-
-        const texts = {
-            mainTitleShort: { it: "Benvenuto & Regolamento", en: "Welcome & Policy", es: "Bienvenida y Normas", fr: "Bienvenue et Règles", de: "Willkommen & Regeln", pt: "Bem-vindo e Regras" },
-            mainTitleLong: { it: "Termini e Condizioni per Soggiorni Lunghi", en: "Terms and Conditions for Long Stay", es: "Términos y Condiciones para Estancias Largas", fr: "Termes et Conditions pour Longs Séjours", de: "Allgemeine Geschäftsbedingungen für Langzeitaufenthalte", pt: "Termos e Condições para Longa Duração" },
-            
-            // QUICK GUIDE
-            quickTitle: { it: "Quick Guide: Regole della Casa", en: "Quick Guide: House Rules", es: "Guía Rápida: Normas", fr: "Guide Rapide : Règles", de: "Kurzanleitung: Hausregeln", pt: "Guia Rápido: Regras da Casa" },
-            quickIntro: {
-                it: "Siamo felici di averti qui! Per garantire a tutti un'esperienza confortevole, abbiamo raccolto alcune semplici linee guida amichevoli.",
-                en: "We're so happy to have you stay with us! Here are a few friendly guidelines to ensure a comfortable experience for everyone.",
-                es: "¡Estamos muy contentos de tenerte aquí! Aquí tienes algunas pautas amistosas para asegurar una experiencia cómoda.",
-                fr: "Nous sommes ravis de vous accueillir ! Voici quelques directives amicales pour assurer un séjour confortable à tous.",
-                de: "Wir freuen uns, Sie bei uns zu haben! Hier ein paar freundliche Richtlinien für einen angenehmen Aufenthalt.",
-                pt: "Estamos felizes em recebê-lo! Aqui estão algumas diretrizes amigáveis para garantir uma experiência confortável para todos."
-            },
-            quickGrid: {
-                it: `<div class="quick-item">${icons.users}<span><strong>Solo Ospiti Registrati:</strong> Solo persone ufficialmente registrate.</span></div>
-                     <div class="quick-item">${icons.noSmoke}<span><strong>Solo Aria Fresca:</strong> Vietato fumare all'interno.</span></div>
-                     <div class="quick-item">${icons.paw}<span><strong>Niente Amici a 4 Zampe:</strong> Non adatto agli animali (allergie).</span></div>
-                     <div class="quick-item">${icons.moon}<span><strong>Shhh... Ore di Silenzio:</strong> 21:00 - 07:00. Rispetta i vicini.</span></div>
-                     <div class="quick-item">${icons.party}<span><strong>Modalità Relax:</strong> Niente feste o grandi eventi.</span></div>
-                     <div class="quick-item">${icons.recycle}<span><strong>Green & Pulito:</strong> Segui la guida alla raccolta differenziata.</span></div>
-                     <div class="quick-item">${icons.toilet}<span><strong>WC (Sanitrit):</strong> Solo carta igienica nel The NoLo Nest.</span></div>`,
-                en: `<div class="quick-item">${icons.users}<span><strong>Registered Guests Only:</strong> Officially registered people only.</span></div>
-                     <div class="quick-item">${icons.noSmoke}<span><strong>Fresh Air Only:</strong> No smoking inside.</span></div>
-                     <div class="quick-item">${icons.paw}<span><strong>No 4-Legged Friends:</strong> Not suitable for pets (allergies).</span></div>
-                     <div class="quick-item">${icons.moon}<span><strong>Shhh... Quiet Hours:</strong> 9 PM - 7 AM. Respect neighbors.</span></div>
-                     <div class="quick-item">${icons.party}<span><strong>Relax Mode:</strong> No parties or large events.</span></div>
-                     <div class="quick-item">${icons.recycle}<span><strong>Green & Clean:</strong> Follow the recycling guide.</span></div>
-                     <div class="quick-item">${icons.toilet}<span><strong>WC (Sanitrit):</strong> Toilet paper only in The NoLo Nest.</span></div>`,
-                // ... (altre lingue invariate) ...
-                es: `<div class="quick-item">${icons.users}<span><strong>Solo Registrados</strong></span></div>`, 
-                fr: `<div class="quick-item">${icons.users}<span><strong>Invités Enregistrés</strong></span></div>`,
-                de: `<div class="quick-item">${icons.users}<span><strong>Nur Registrierte</strong></span></div>`,
-                pt: `<div class="quick-item">${icons.users}<span><strong>Apenas Registrados</strong></span></div>`
-            },
-
-            // HOSPITALITY MODEL
-            hospitalityTitle: { it: 'Il nostro modello di ospitalità', en: 'Our Hospitality Model', es: 'Nuestro Modelo', fr: 'Notre Modèle', de: 'Unser Modell', pt: 'Nosso Modelo' },
-            hospitalitySubtitle: { it: "Accoglienza responsabile, sostenibile e inclusiva", en: "Responsible, sustainable and inclusive hosting", es: "Acogida responsable, sostenible e inclusiva", fr: "Accueil responsable, durable et inclusif", de: "Verantwortungsvoller, nachhaltiger und inklusiver Empfang", pt: "Hospedagem responsável, sustentável e inclusiva" },
-            
-            hospDesign: { it: "Design a basso impatto", en: "Low-impact design", es: "Diseño de bajo impacto", fr: "Design à faible impact", de: "Design mit geringen Auswirkungen", pt: "Design de baixo impacto" },
-            hospPeople: { it: "Accoglienza inclusiva", en: "Inclusive hosting", es: "Acogida inclusiva", fr: "Accueil inclusif", de: "Inklusiver Empfang", pt: "Acolhimento inclusivo" },
-            hospEnergy: { it: "Gestione energetica efficiente", en: "Efficient energy management", es: "Gestión energética eficiente", fr: "Gestion énergétique efficace", de: "Effizientes Energiemanagement", pt: "Gestão energética eficiente" },
-            hospLocal: { it: "Fornitori locali", en: "Local suppliers", es: "Proveedores locales", fr: "Fournisseurs locaux", de: "Lokale Lieferanten", pt: "Fornecedores locais" },
-            hospGreen: { it: "Mobilità green", en: "Green mobility", es: "Movilidad verde", fr: "Mobilité verte", de: "Grüne Mobilität", pt: "Mobilidade verde" },
-            hospGuest: { it: "Coinvolgimento attivo degli ospiti", en: "Active guest involvement", es: "Participación activa", fr: "Implication active des invités", de: "Aktive Einbeziehung der Gäste", pt: "Envolvimento ativo dos hóspedes" },
-            
-            accessibilityText: { it: `<strong>Nota su accessibilità e contesto storico:</strong><br>La nostra ospitalità vive all'interno di edifici storici: un patrimonio affascinante che porta con sé vincoli architettonici nelle parti comuni.<br><br>Purtroppo, al momento l'ingresso non è idoneo a persone con disabilità motorie. <em>Ci stiamo però facendo promotori attivi presso l'amministrazione per trovare soluzioni condivise e abbattere queste barriere in futuro.</em>`, en: `<strong>Note on accessibility & historical context...</strong>` },
-            
-            transitionText: { it: "⬇️ Per dettagli legali, clausole e costi completi, espandi le sezioni qui sotto ⬇️", en: "⬇️ For full legal details, clauses, and costs, expand the sections below ⬇️" },
-
-            // PAYMENT CONTENT (Logica Prezzo definita)
-            paymentTitle: { it: "Prenotazioni Dirette: Pagamenti & Cancellazione", en: "Direct Bookings: Payments & Cancellation" },
-            paymentContentShort: {
-                it: `<p><strong>Short Stay (1-29 notti):</strong><br>Caparra 30% alla prenotazione. Saldo totale 14 giorni prima dell'arrivo.<br>Cancellazione: Penale 50% tra 30-15gg, 100% sotto i 15gg.</p>`,
-                en: `<p><strong>Short Stay (1-29 nights):</strong><br>30% Deposit. Full balance 14 days before arrival.<br>Cancellation: 50% penalty 30-15 days, 100% under 15 days.</p>`
-            },
-            paymentContentLong: {
-                it: `<div class="important-note" style="border-left-color: #ffd700;">
-                        <strong>⚠️ Regola Pagamenti Long / Max Stay:</strong><br>
-                        Il canone è ricorrente. I pagamenti devono avvenire tassativamente <strong>entro il venerdì</strong> precedente alla nuova settimana o mese.<br><br>
-                        <strong>Extra Long Stay (60-89gg):</strong> Saldo del mese successivo entro il 25° giorno del mese corrente.<br>
-                        <strong>Maximum Stay (90gg+):</strong> Rate settimanali anticipate.<br><br>
-                        <strong>Disdetta Anticipata:</strong> È richiesto un preavviso di <strong>7-14 giorni</strong> (a seconda della durata). Non sono previsti rimborsi per periodi parziali.
-                     </div>`,
-                en: `<div class="important-note" style="border-left-color: #ffd700;">
-                        <strong>⚠️ Long / Max Stay Payment Rule:</strong><br>
-                        Rent is recurring. Payments must be made strictly <strong>by the Friday</strong> before the new period.<br><br>
-                        <strong>Extra Long (60-89 days):</strong> Next month balance by the 25th.<br>
-                        <strong>Maximum Stay (90 days+):</strong> Weekly advance payments.
-                     </div>`
-            },
-
-            // --- COSTS LIST (4 TIERS STRUCTURE) ---
-            costsTitle: { it: "Costi, Tasse e Depositi", en: "Costs, Taxes & Deposits" },
-            costsListShort: {
-                it: `<ul><li><strong>Tassa di Soggiorno:</strong> €9,50 a persona/notte (max 14 giorni).</li>
-                     <li><strong>Costo Fisso di Servizio:</strong> €15 per soggiorno.</li>
-                     <li><strong>Deposito:</strong> €350 o Polizza Danni.</li>
-                     <li><strong>Supplementi Energetici:</strong> Estate +4% / Inverno +5% (Cap €80).</li>
-                     <li><strong>Pulizie Finali:</strong>
-                        <ul><li>&lt; 14 notti: €45</li><li>14-29 notti: €80</li></ul>
-                     </li>
-                     <li><strong>Pulizie Intermedie:</strong> A pagamento (a carico dell'ospite).</li></ul>`,
-                en: `<ul><li><strong>City Tax:</strong> €9.50 pp/night.</li><li><strong>Service Fee:</strong> €15.</li><li><strong>Deposit:</strong> €350 or Insurance.</li><li><strong>Surcharges:</strong> Summer +4% / Winter +5%.</li><li><strong>Final Cleaning:</strong> <14 nights €45, 14-29 nights €80.</li></ul>`
-            },
-            costsListLong: {
-                // 3 COLUMNS FOR LONG STAYS
-                it: `<div class="tiers-container">
-                        <div class="tier-box">
-                            <h4>🏠 Long Stay<br>(30-59 notti)</h4>
-                            <ul>
-                                <li><strong>Registro Contratto:</strong> <span class="warning-text" style="display:inline; padding:2px 5px; font-size:0.9em">A Carico Ospite</span><br>(2% canone + €16 bolli)</li>
-                                <li><strong>Supplementi:</strong> Forfait €80/mese + €4/gg extra.</li>
-                                <li><strong>Pulizia Finale:</strong> €80.</li>
-                                <li><strong>Pulizia Intermedia:</strong> A pagamento.</li>
-                            </ul>
-                        </div>
-                        <div class="tier-box extra">
-                            <h4>🏢 Extra Long<br>(60-89 notti)</h4>
-                            <ul>
-                                <li><strong>Registro Contratto:</strong> <span class="half-badge">GRATUITO</span><br>(Assorbito dal gestore)</li>
-                                <li><strong>Supplementi:</strong> Forfait €80/mese.</li>
-                                <li><strong>Pulizia Finale:</strong> €80 (A carico ospite).</li>
-                                <li><strong>Pulizia Intermedia:</strong> Costo condiviso 50/50.</li>
-                            </ul>
-                        </div>
-                        <div class="tier-box premium">
-                            <h4>🌟 Maximum Stay<br>(90+ notti)</h4>
-                            <p style="color:#FFD700; font-weight:bold; font-size:0.9em; margin-bottom:10px;">ALL INCLUSIVE:</p>
-                            <ul>
-                                <li><strong>Registro Contratto:</strong> <span class="free-badge">GRATUITO</span></li>
-                                <li><strong>Utenze/Energy:</strong> <span class="free-badge">INCLUSE</span></li>
-                                <li><strong>Pulizia Finale:</strong> <span class="free-badge">INCLUSA</span></li>
-                                <li><strong>Pulizia Intermedia:</strong> <span class="free-badge">INCLUSA</span></li>
-                            </ul>
-                            <div class="clawback-warning">
-                                ⚠️ <strong>Clausola Recupero Costi:</strong><br>
-                                In caso di interruzione anticipata (< 90gg), l'ospite dovrà rimborsare tutti i costi inizialmente omaggiati (Registrazione, Utenze, Pulizie).
-                            </div>
-                        </div>
-                     </div>
-                     <ul class="common-rules">
-                        <li><strong>Tassa Soggiorno:</strong> €9,50/notte (max 14gg).</li>
-                        <li><strong>Costo Servizio:</strong> €15,00.</li>
-                        <li><strong>Divieti:</strong> Assoluto divieto di subaffitto, eventi, fumo.</li>
-                     </ul>`,
-                en: `<div class="tiers-container">
-                        <div class="tier-box">
-                            <h4>🏠 Long Stay (30-59 nights)</h4>
-                            <ul><li><strong>Registration:</strong> Guest pays.</li><li><strong>Energy:</strong> €80/mo flat.</li><li><strong>Cleaning:</strong> Guest pays.</li></ul>
-                        </div>
-                        <div class="tier-box extra">
-                            <h4>🏢 Extra Long (60-89 nights)</h4>
-                            <ul><li><strong>Registration:</strong> <span class="half-badge">FREE</span></li><li><strong>Cleaning Inter.:</strong> 50/50 split.</li></ul>
-                        </div>
-                        <div class="tier-box premium">
-                            <h4>🌟 Maximum Stay (90+ nights)</h4>
-                            <ul><li><strong>ALL INCLUSIVE:</strong> Reg, Energy, Cleaning <span class="free-badge">FREE</span>.</li></ul>
-                            <div class="clawback-warning">⚠️ Early termination clawback applies.</div>
-                        </div>
-                     </div>`
-            },
-
-            // ... (altre sezioni testo standard come rules, green, etc. rimangono popolate come prima) ...
-            rulesTitle: { it: "Regole della Casa (Dettaglio)", en: "House Rules" },
-            rulesList: { it: `<li><strong>Ospiti Registrati:</strong> Solo persone ufficiali.</li><li><strong>Divieto Fumo:</strong> Penale €200.</li><li><strong>Niente Animali.</strong></li><li><strong>Silenzio:</strong> 21:00-07:00.</li>`, en: `<li>Registered guests only. No Smoking. No Pets. Quiet hours 21-07.</li>` },
-            greenTitle: { it: "Politica Ecologica", en: "Green Policy" },
-            greenList: { it: `<li>Uso responsabile energia.</li><li>Raccolta differenziata obbligatoria.</li>`, en: `<li>Responsible energy use. Recycling mandatory.</li>` },
-            visionTitle: { it: "D&I e Vision", en: "D&I & Vision" },
-            visionContent: { it: `<p>Filosofia di non violenza e accoglienza inclusiva.</p>`, en: `<p>Non-violence and inclusive hosting philosophy.</p>` },
-            damageTitle: { it: "Deposito e Polizza", en: "Deposit & Insurance" },
-            damageDetails: { it: `<p>Deposito €350 o Polizza Danni obbligatoria.</p>`, en: `<p>€350 Deposit or Insurance required.</p>` },
-            contractTitle: { it: "Contratto", en: "Contract" },
-            contractContent: { it: `<p>Vedi dettagli sopra per termini specifici per durata.</p>`, en: `<p>See above for duration-specific terms.</p>` },
-            privacyTitle: { it: "Privacy GDPR", en: "Privacy GDPR" },
-            privacyContent: { it: `<p>Trattamento dati secondo normativa GDPR 2016/679.</p>`, en: `<p>Data processing per GDPR 2016/679.</p>` },
-
-            // CHATBOT
-            chatHeader: { it: "Assistente Virtuale", en: "Virtual Assistant" },
-            chatPlaceholder: { it: "Scrivi qui...", en: "Type here..." },
-            chatSend: { it: "Invia", en: "Send" },
-            initialBotMessage: { it: "Ciao! Chiedi pure info su tassa di soggiorno, costi o durate.", en: "Hi! Ask about city tax, costs or durations." }
-        };
-
-        const qaPairs = { it: { 'tassa': "€9,50...", 'costo': "..." }, en: { 'tax': "..." } };
-        const defaultResponses = { it: "Non ho capito.", en: "I didn't understand." };
-
-        let currentLang = 'it';
-        let stayType = 'short';
-
-        const chatBox = document.getElementById('chat-box');
-        const userInput = document.getElementById('user-input');
-        const sendBtn = document.getElementById('send-btn');
-
-        function updateContent() {
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById(`lang-${currentLang}`).classList.add('active');
-            document.getElementById('stay-short').classList.toggle('active', stayType === 'short');
-            document.getElementById('stay-long').classList.toggle('active', stayType === 'long');
-
-            const titleKey = stayType === 'short' ? 'mainTitleShort' : 'mainTitleLong';
-            document.querySelector('[data-key="mainTitle"]').textContent = texts[titleKey][currentLang];
-
-            const payKey = stayType === 'short' ? 'paymentContentShort' : 'paymentContentLong';
-            const costKey = stayType === 'short' ? 'costsListShort' : 'costsListLong';
-            
-            document.querySelector('[data-key="paymentContent"]').innerHTML = texts[payKey][currentLang];
-            document.getElementById('costs-container-target').innerHTML = texts[costKey][currentLang];
-            
-            // Aggiorna testi statici
-            ['rulesList', 'greenList', 'visionContent', 'damageDetails', 'contractContent', 'privacyContent'].forEach(key => {
-                 const el = document.querySelector(`[data-key="${key}"]`);
-                 const txt = (texts[key] && texts[key][currentLang]) ? texts[key][currentLang] : (texts[key] && texts[key]['it']); 
-                 if(el) el.innerHTML = txt;
-            });
-            const accessEl = document.querySelector('[data-key="accessibilityText"]');
-            if(accessEl) accessEl.innerHTML = texts.accessibilityText[currentLang];
-            
-            document.querySelectorAll('[data-key]').forEach(elem => {
-                const key = elem.dataset.key;
-                if(['mainTitle','paymentContent','costsList','contractContent','damageDetails','privacyContent','rulesList','greenList','visionContent','accessibilityText'].includes(key)) return;
-                if(texts[key] && texts[key][currentLang]) {
-                    if(elem.tagName === 'INPUT') elem.placeholder = texts[key][currentLang];
-                    else if(elem.classList.contains('quick-grid')) elem.innerHTML = texts[key][currentLang];
-                    else elem.textContent = texts[key][currentLang];
-                }
-            });
-
-            chatBox.innerHTML = '';
-            appendMessage(texts.initialBotMessage[currentLang], 'bot-message');
-        }
-
-        ['it', 'en', 'es', 'fr', 'de', 'pt'].forEach(lang => {
-            document.getElementById(`lang-${lang}`).addEventListener('click', () => { currentLang = lang; updateContent(); });
-        });
-        document.getElementById('stay-short').addEventListener('click', () => { stayType = 'short'; updateContent(); });
-        document.getElementById('stay-long').addEventListener('click', () => { stayType = 'long'; updateContent(); });
-
-        const accordions = document.getElementsByClassName("accordion");
-        for (let i = 0; i < accordions.length; i++) {
-            accordions[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                const panel = this.nextElementSibling;
-                panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
-                panel.style.padding = panel.style.maxHeight ? "30px 25px" : "0 25px";
-            });
-        }
-
-        function handleUserInput() {
-            const txt = userInput.value.trim().toLowerCase();
-            if (!txt) return;
-            appendMessage(txt, 'user-message');
-            userInput.value = "";
-            setTimeout(() => appendMessage(defaultResponses[currentLang], 'bot-message'), 500);
-        }
-
-        function appendMessage(txt, cls) {
-            const div = document.createElement('div');
-            div.className = `chat-message ${cls}`;
-            div.textContent = txt;
-            chatBox.appendChild(div);
-            chatBox.scrollTop = chatBox.scrollHeight;
-        }
-
-        sendBtn.addEventListener('click', handleUserInput);
-        userInput.addEventListener('keypress', e => { if(e.key === 'Enter') handleUserInput(); });
-
-        updateContent();
     });
 
-    // FUNZIONE DI GENERAZIONE PDF
-    function generatePDF() {
-        const printArea = document.getElementById('print-area');
-        const today = new Date().toLocaleDateString();
-        
-        const typeLabel = stayType === 'short' ? 'SHORT STAY (1-29 Notti)' : 'LONG & MAXIMUM STAY (30-90+ Notti)';
-        
-        let costsContent = '';
-        if (stayType === 'short') {
-            costsContent = `
-                <p><strong>Short Stay (1-29 Notti)</strong></p>
-                <ul>
-                    <li><strong>Tassa di Soggiorno:</strong> €9,50 persona/notte (max 14gg).</li>
-                    <li><strong>Costo Servizio:</strong> €15,00 una tantum.</li>
-                    <li><strong>Supplementi:</strong> Estate +4% / Inverno +5% (Cap €80).</li>
-                    <li><strong>Pulizie Finali:</strong> €45 (sotto 14gg) / €80 (sopra 14gg).</li>
-                    <li><strong>Pagamento:</strong> Saldo 14 giorni prima dell'arrivo.</li>
-                </ul>
-            `;
-        } else {
-            costsContent = `
-                <p><strong>Long & Maximum Stay - Dettaglio Fasce</strong></p>
-                <table class="pdf-table">
-                    <thead>
-                        <tr>
-                            <th>Voce</th>
-                            <th>Long Stay (30-59gg)</th>
-                            <th>Extra Long (60-89gg)</th>
-                            <th>Maximum Stay (90gg+)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Registro Contratto</strong></td>
-                            <td>A carico ospite</td>
-                            <td>Gratuito (Gestore)</td>
-                            <td>Gratuito (All Inclusive)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Energy/Utenze</strong></td>
-                            <td>Forfait €80/mese + extra</td>
-                            <td>Forfait €80/mese</td>
-                            <td>Incluso</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Pulizie Intermedie</strong></td>
-                            <td>A carico ospite</td>
-                            <td>50% Ospite / 50% Gestore</td>
-                            <td>Incluse</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Pulizia Finale</strong></td>
-                            <td>€80</td>
-                            <td>€80</td>
-                            <td>Inclusa</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p style="margin-top:10px; font-size:11px;">* <strong>Clausola Maximum Stay:</strong> In caso di recesso anticipato (<90gg), l'ospite rimborsa i costi omaggiati.</p>
-            `;
-        }
-
-        const htmlContent = `
-            <div class="pdf-header">
-                <img src="logo.png" alt="Logo" class="pdf-logo">
-                <div class="pdf-title">Termini e Condizioni di Soggiorno</div>
-                <div class="pdf-meta">
-                    Documento generato il: ${today}<br>
-                    Tipologia: <strong>${typeLabel}</strong>
-                </div>
-            </div>
-
-            <div class="pdf-section">
-                <div class="pdf-section-title">1. Regole della Casa</div>
-                <div class="pdf-content">
-                    <ul>
-                        <li><strong>Ospiti:</strong> Solo registrati.</li>
-                        <li><strong>Divieti:</strong> No fumo, no feste, no animali.</li>
-                        <li><strong>Silenzio:</strong> 21:00 - 07:00.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="pdf-section">
-                <div class="pdf-section-title">2. Condizioni Economiche</div>
-                <div class="pdf-content">
-                    ${costsContent}
-                </div>
-            </div>
-            
-            <div class="pdf-footer">
-                2EMME RE&CONSULTING di Matteo Masella - P.IVA IT13411850962<br>
-                Sintesi delle condizioni operative. Fa fede il contratto firmato.
-            </div>
-        `;
-
-        printArea.innerHTML = htmlContent;
-        window.print();
-    }
+    calculate();
 </script>
 </body>
 </html>
