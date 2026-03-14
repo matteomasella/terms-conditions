@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>2EMME Apartments - Termini, Condizioni e Regolamento 2026</title>
+    <title>2EMME Apartments - Documentazione Ufficiale 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-dark: #021216;
             --text-main: #ffffff;
-            --text-muted: #8d9196;
-            --accent-green: #4FD1C5;
-            --accent-blue: #63B3ED;
-            --accent-orange: #F6AD55;
-            --accent-gold: #FFD700;
+            --ottanio-palette: #004D54; 
+            --red-palette: #DB4F61;     
+            --green-palette: #54C4A6;   
             --border: rgba(255, 255, 255, 0.1);
             --glass: rgba(255, 255, 255, 0.03);
             --glass-blur: blur(25px);
@@ -22,7 +20,7 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-dark);
-            background-image: radial-gradient(circle at 10% 10%, rgba(79, 209, 197, 0.07) 0%, transparent 40%);
+            background-image: radial-gradient(circle at 10% 10%, rgba(0, 77, 84, 0.15) 0%, transparent 40%);
             color: var(--text-main);
             margin: 0; padding: 10px;
             display: flex; justify-content: center; align-items: flex-start; min-height: 100vh;
@@ -34,281 +32,226 @@
             border: 1px solid var(--border);
             border-radius: 28px;
             padding: 25px;
-            width: 100%; max-width: 950px;
+            width: 100%; max-width: 1000px;
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
             margin: 20px 0;
         }
 
-        /* HEADER & LOGO */
-        .brand-header { text-align: center; margin-bottom: 30px; }
-        .brand-logo { max-width: 180px; margin-bottom: 15px; }
-        #google_translate_element { margin-bottom: 20px; text-align: center; }
+        .brand-header { text-align: center; margin-bottom: 20px; }
+        .brand-logo { max-width: 220px; height: auto; margin-bottom: 15px; }
+        #google_translate_element { margin: 20px 0; text-align: center; min-height: 40px; }
 
-        h2.section-header { font-size: 24px; font-weight: 800; margin-bottom: 30px; text-align: center; color: var(--accent-green); letter-spacing: -0.5px; }
+        .policy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 30px; }
+        .policy-card { background: rgba(255, 255, 255, 0.02); border-radius: 20px; padding: 15px; border-width: 2px; border-style: solid; }
+        .card-header { font-size: 14px; font-weight: 800; margin-bottom: 4px; }
 
-        /* GRID PANORAMICA */
-        .policy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 35px; }
-        @media (min-width: 768px) { .policy-grid { grid-template-columns: repeat(4, 1fr); } }
+        #standard { border-color: var(--ottanio-palette); }
+        #long { border-color: var(--green-palette); }
+        #extra { border-color: var(--red-palette); }
+        #smart { border-color: #FFD700; }
 
-        .policy-card { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: 20px; padding: 18px; transition: 0.3s; }
-        .card-header { font-size: 15px; font-weight: 700; margin-bottom: 5px; }
-        .card-subheader { font-size: 9px; color: var(--text-muted); font-weight: 800; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+        .card-info { font-size: 11px; color: #cbd5e0; line-height: 1.5; }
+        .card-info b { color: #fff; }
 
-        #long .card-header { color: var(--accent-blue); }
-        #extra .card-header { color: var(--accent-orange); }
-        #smart .card-header { color: var(--accent-gold); }
-        #standard .card-header { color: var(--accent-green); }
-
-        .benefit-tag { font-size: 10px; color: #fff; background: rgba(255,255,255,0.08); padding: 5px 8px; border-radius: 6px; display: block; margin-top: 10px; font-weight: 600; line-height: 1.3; border-left: 2px solid currentColor; }
-
-        /* SIMULATORE */
-        .simulator-section { background: rgba(0, 0, 0, 0.25); border: 1px solid var(--border); border-radius: 22px; padding: 25px; display: flex; flex-wrap: wrap; gap: 25px; margin-bottom: 40px; }
+        .simulator-section { background: rgba(0, 0, 0, 0.3); border: 1px solid var(--border); border-radius: 22px; padding: 25px; display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 30px; }
         .controls-col { flex: 1.1; min-width: 280px; }
-        .results-col { flex: 0.9; min-width: 250px; border-left: 1px solid var(--border); padding-left: 25px; text-align: right; }
-        
-        .input-label { font-size: 13px; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 10px; }
+        .results-col { flex: 0.9; min-width: 280px; border-left: 1px solid var(--border); padding-left: 25px; text-align: right; }
+
+        .input-label { font-size: 13px; color: #a0aec0; font-weight: 600; display: block; margin-bottom: 8px; }
         .days-value { float: right; color: #fff; font-weight: 800; font-size: 18px; }
-        
         .dropdown { background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 12px; color: #fff; padding: 12px; width: 100%; font-family: inherit; font-size: 14px; margin-bottom: 15px; outline: none; }
-        
-        .price-breakdown { font-size: 13px; color: var(--text-muted); line-height: 2.1; }
+
+        .price-breakdown { font-size: 13px; color: #a0aec0; line-height: 2.1; }
         .price-breakdown span { color: #fff; font-weight: 600; }
-        .total-price { font-size: 32px; font-weight: 800; color: var(--accent-green); margin-top: 15px; border-top: 1px solid var(--border); padding-top: 15px; }
+        .total-price { font-size: 32px; font-weight: 800; color: var(--green-palette); margin-top: 15px; border-top: 1px solid var(--border); padding-top: 15px; }
 
-        /* ACCORDION */
-        .accordion { background: rgba(255, 255, 255, 0.04); color: #fff; cursor: pointer; padding: 20px; width: 100%; border: 1px solid var(--border); border-radius: 16px; margin-top: 12px; font-weight: 700; display: flex; align-items: center; justify-content: space-between; font-size: 16px; text-align: left; transition: 0.3s; }
-        .accordion:hover { background: rgba(255, 255, 255, 0.08); }
-        .panel { padding: 0 20px; background: rgba(0, 0, 0, 0.15); max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; border-radius: 0 0 16px 16px; font-size: 14px; line-height: 1.7; color: var(--text-muted); }
+        .accordion { background: rgba(255, 255, 255, 0.04); color: #fff; cursor: pointer; padding: 18px; width: 100%; border: 1px solid var(--border); border-radius: 16px; margin-top: 10px; font-weight: 700; display: flex; align-items: center; justify-content: space-between; font-size: 15px; text-align: left; border: none; outline: none; }
+        .panel { padding: 0 20px; background: rgba(0, 0, 0, 0.15); max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; border-radius: 0 0 16px 16px; font-size: 14px; line-height: 1.7; color: #e2e8f0; }
         .panel-inner { padding: 25px 0; }
-        .panel-inner strong { color: #fff; }
-        .privacy-item { margin-bottom: 12px; display: block; }
-        .privacy-item b { color: var(--accent-green); margin-right: 5px; }
-        
-        input[type=range] { width: 100%; accent-color: var(--accent-green); }
+        .panel-inner h3 { color: var(--green-palette); font-size: 17px; margin-top: 20px; border-bottom: 1px solid var(--border); padding-bottom: 5px; }
 
-        /* FOOTER */
-        .footer-note { font-size: 10px; color: var(--text-muted); margin-top: 15px; text-align: center; }
+        .fair-use-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 12px; color: #fff; }
+        .fair-use-table td, .fair-use-table th { border: 1px solid var(--border); padding: 8px; text-align: left; }
+        .fair-use-table th { background: var(--ottanio-palette); color: #fff; }
+
+        .privacy-item { margin-bottom: 15px; display: block; border-left: 2px solid var(--ottanio-palette); padding-left: 12px; }
+        .privacy-item b { color: var(--green-palette); display: block; margin-bottom: 4px; }
+        input[type=range] { width: 100%; accent-color: var(--green-palette); }
     </style>
 </head>
 <body>
 
 <div class="glass-container">
     <div class="brand-header">
-        <img src="https://i.ibb.co/Y4L2qT1/logo-2emme.png" alt="2EMME Apartments" class="brand-logo">
+        <img src="logo.png" alt="2EMME Apartments" class="brand-logo">
         <div id="google_translate_element"></div>
     </div>
 
-    <h2 class="section-header">Termini, Condizioni e Regolamento 2026</h2>
-
     <div class="policy-grid">
+        <div class="policy-card" id="standard">
+            <div class="card-header">STANDARD STAY (0-13 NT)</div>
+            <div class="card-info">Modello: <b>Plug & Play</b> | Tariffa: <b>Prezzo Base</b><br>Utenze: <b>Incluse</b> | Tassa Soggiorno: <b>Dovuta per l'intera durata</b><br>Pulizia: <b>45,00€ (nessuna intermedia)</b></div>
+        </div>
         <div class="policy-card" id="long">
-            <div class="card-header">Long Stay</div>
-            <div class="card-subheader">14 - 29 NOTTI</div>
-            <div style="font-size:11px; color:var(--text-muted)">ADR: -5% Sconto</div>
-            <div class="benefit-tag" style="color:var(--accent-blue)">Soft Welcome Drink (One-Shot)</div>
+            <div class="card-header">LONG STAY (14-29 NT)</div>
+            <div class="card-info">Sconto: <b>-5% Prezzo Base</b> | Tassa Soggiorno: <b>Dovuta prime 14 notti</b><br>Benefit: <b>Welcome Soft Drink Kit</b> | Pulizie: <b>80,00€ + 1 intermedia ogni 14gg</b></div>
         </div>
         <div class="policy-card" id="extra">
-            <div class="card-header">Extra Long</div>
-            <div class="card-subheader">30 - 60 NOTTI</div>
-            <div style="font-size:11px; color:var(--text-muted)">ADR: -10% Sconto</div>
-            <div class="benefit-tag" style="color:var(--accent-orange)">Spirit Kit Welcome (One-Shot)</div>
+            <div class="card-header">EXTRA LONG (30-60 NT)</div>
+            <div class="card-info">Sconto: <b>-10% Prezzo Base</b> | Utenze: <b>Forfait 90,00€/mese (3,00€/gg)</b><br>Registro: <b>Obbligo legge — 100% a carico ospite</b> | Benefit: <b>Welcome Spirit Kit o Parcheggio</b></div>
         </div>
         <div class="policy-card" id="smart">
-            <div class="card-header">Smart Resident</div>
-            <div class="card-subheader">61 - 90 NOTTI</div>
-            <div style="font-size:11px; color:var(--text-muted)">ADR: -18% Sconto</div>
-            <div class="benefit-tag" style="color:var(--accent-gold)">Progressione 75gg:<br>Park/Pul/Reg Gratis</div>
-        </div>
-        <div class="policy-card" id="standard">
-            <div class="card-header">Flessibilità</div>
-            <div class="card-subheader">Regolamento</div>
-            <div style="font-size:11px; color:var(--text-muted)">Progressività fedeltà applicata</div>
-            <div class="benefit-tag">Standard Access</div>
+            <div class="card-header">SMART RESIDENT (61-90 NT)</div>
+            <div class="card-info">Sconto: <b>-18% Prezzo Base</b> | Tassa Soggiorno: <b>Dovuta prime 14 notti</b><br>Super Benefit (>75gg): <b>Parcheggio o Tassa incluse</b> | Fedeltà: <b>Pulizie 50% dal 61° gg, GRATIS oltre 75° gg</b><br><strong>Nota:</strong> Per gli Smart Resident l'Host copre anche il costo della polizza assicurativa.</div>
         </div>
     </div>
 
     <div class="simulator-section">
         <div class="controls-col">
-            <div style="font-weight:700; margin-bottom:5px; color:#fff; text-transform:uppercase; font-size:14px;">Simulatore Meccanismi Prezzo</div>
-            <div style="font-size:11px; color:var(--text-muted); margin-bottom:20px;">Esempio basato su ADR fittizio di 80,00 Euro</div>
-            
-            <div style="margin-bottom:25px;">
-                <label class="input-label">Notti di soggiorno: <span class="days-value" id="days-display">80</span></label>
-                <input type="range" id="days-slider" min="1" max="90" value="80" oninput="calculate()">
-            </div>
-            
-            <label class="input-label">Stagionalità</label>
+            <label class="input-label">Notti di soggiorno: <span class="days-value" id="days-display">80</span></label>
+            <input type="range" id="days-slider" min="1" max="90" value="80" oninput="calculate()">
+            <label class="input-label" style="margin-top:20px;">Stagionalità</label>
             <select class="dropdown" id="season-select" onchange="calculate()">
-                <option value="0.04">Periodo Estivo (+4% Surcharge - CAP 80€)</option>
-                <option value="0.05">Periodo Invernale (+5% Surcharge - CAP 80€)</option>
+                <option value="0.04">Estate (+4% Surcharge - CAP 80€)</option>
+                <option value="0.05">Inverno (+5% Surcharge - CAP 80€)</option>
             </select>
-
             <label class="input-label">Modalità Pagamento (>30nt)</label>
             <select class="dropdown" id="pay-mode" onchange="calculate()">
-                <option value="1">Settimanale (Base ADR)</option>
-                <option value="0.9">Mensile Anticipato (-10% Extra)</option>
-                <option value="0.85">Totale Anticipato (-15% Extra)</option>
+                <option value="1">Settimanale (Base)</option>
+                <option value="0.9">Mensile Anticipato (-10%)</option>
+                <option value="0.85">Totale Anticipato (-15%)</option>
             </select>
         </div>
-        
         <div class="results-col">
             <div class="price-breakdown">
                 Soggiorno (<span id="res-days">80</span> nt): <span>Euro <span id="stay-cost">0.00</span></span><br>
-                Sconti (ADR + Pagamento): <span style="color:var(--accent-green);">- Euro <span id="total-discount-val">0.00</span></span><br>
-                Utenze / Surcharge (CAP): <span>Euro <span id="util-cost">0.00</span></span><br>
-                Pulizie Intermedie (Progressive): <span>Euro <span id="cleaning-cost">0.00</span></span><br>
-                Imposta di Registro (Prog.): <span>Euro <span id="reg-cost">0.00</span></span><br>
-                Costo Fisso Servizio: <span>Euro 15.00</span><br>
-                Tassa di Soggiorno (Max 14nt): <span>Euro <span id="tax-cost">0.00</span></span><br>
-                Benefit Attivi: <span id="benefit-display" style="color:var(--accent-gold); font-weight:700;">Park/Pul/Reg Gratis</span>
+                Sconti (ADR+Pagamento): <span style="color:var(--green-palette);">- Euro <span id="total-discount-val">0.00</span></span><br>
+                Utenze / Surcharge: <span>Euro <span id="util-cost">0.00</span></span><br>
+                Imposta Registro (Prog.): <span>Euro <span id="reg-cost">0.00</span></span><br>
+                Pulizie Intermedie (Prog.): <span>Euro <span id="cleaning-cost">0.00</span></span><br>
+                Tasse / Servizio / Pulizia Finale: <span>Euro <span id="tax-cost">0.00</span></span>
             </div>
             <div class="total-price">Euro <span id="final-total">0.00</span></div>
         </div>
     </div>
 
-    <div class="regolamento-box">
-        
-        <button class="accordion">1. Costi, Pagamenti e Imposta di Registro <span>+</span></button>
-        <div class="panel"><div class="panel-inner">
-            <p><strong>Soggiorni Inferiori a 30 Notti (Standard e Long Stay):</strong> Il modello prevede il saldo totale anticipato. Alla conferma della prenotazione è richiesto il versamento di una caparra pari al 30%, mentre il restante 70% deve essere saldato tassativamente 14 giorni prima dell'arrivo. La Tassa di Soggiorno (9,50 Euro/notte, max 14nt) e il Costo Fisso di Servizio (15,00 Euro) sono esclusi dal canone.</p>
-            <p><strong>Soggiorni Superiori a 30 Notti (Extra Long e Resident):</strong> Oltre allo sconto ADR base (10% o 18%), l'ospite può scegliere tra: Pagamento Settimanale (entro mercoledì), Pagamento Mensile (-10% extra) o Saldo Totale Anticipato (-15% extra).</p>
-            <p><strong>Imposta di Registro:</strong> Pari al 2% del canone complessivo + 16,00 Euro marca da bollo. Ripartizione: 100% ospite (30-60gg), 50% ospite/host (61-75gg), 100% Host (oltre 75gg).</p>
-        </div></div>
+    <button class="accordion">1. PANORAMICA COSTI, PAGAMENTI E SECURITY DEPOSIT WAIVER <span>▼</span></button>
+    <div class="panel"><div class="panel-inner">
+        <h3>1. Costi e Pagamenti</h3>
+        <p><strong>Tassa di Soggiorno (Milano):</strong> Dovuta per i primi 14 giorni consecutivi (€9,50/notte a persona). Per soggiorni superiori a 75 giorni, l'ospite può scegliere l'assunzione del costo (prime 14nt) da parte di 2EMME come benefit alternativo al parcheggio.</p>
+        <p><strong>Costo di Servizio:</strong> €15,00 fisso per soggiorno.</p>
+        <p><strong>Surcharge Stagionale:</strong> Calcolato sul pernotto (Max €80/soggiorno). Estate (16 Mag – 14 Ott): 4%. Inverno (15 Ott – 15 Mag): 5%.</p>
+        <p><strong>Imposta di Registro:</strong> Obbligatoria >30gg. Ripartizione: 100% ospite (30-60gg), 50% (61-75gg), 100% Host (>75gg).</p>
 
-        <button class="accordion">2. Regole della Casa e Penali <span>+</span></button>
-        <div class="panel"><div class="panel-inner">
-            <p><strong>Solo Ospiti Registrati:</strong> È vietato far alloggiare persone non ufficialmente registrate. La violazione comporta l'allontanamento immediato. <strong>Vietato Fumare:</strong> Penale di 200,00 Euro più costi rimozione odori. <strong>Animali:</strong> Non ammessi per ragioni igieniche e allergiche. <strong>Quiete:</strong> Massimo rispetto dalle 23:00 alle 08:00 (vietato l'uso di lavatrici/asciugatrici). <strong>WC Sanitrit:</strong> Solo carta igienica nel WC; ogni blocco tecnico dovuto a uso improprio sarà addebitato integralmente all'ospite.</p>
-        </div></div>
+        <h3>2. Deposito Cauzionale e Protezione Danni (Waiver Program)</h3>
+        <p><strong>Opzione A (Cauzione):</strong> €350 (<30nt) o €500 (≥30nt). Include €4,80 di gestione non rimborsabile.</p>
+        <p><strong>Opzione B (Polizza Danni):</strong> Limite €1.500 (€27,50), €2.500 (€30,70), €5.000 (€35,80). Copre danni accidentali (Franchigia €50) segnalati entro 14gg. Per Extra Long e Smart Resident è obbligatorio il deposito di €500 + polizza massimale alto. Per gli Smart Resident il costo della polizza assicurativa è a carico dell'Host.</p>
+    </div></div>
 
-        <button class="accordion">3. Servizio di Pulizia e Igiene <span>+</span></button>
-        <div class="panel"><div class="panel-inner">
-            <p>Per tutte le permanenze superiori a 13 notti, la pulizia intermedia con cambio biancheria è obbligatoria <strong>ogni 14 giorni</strong> al costo di 40,00 Euro per intervento.</p>
-            <p><strong>Progressione costi per soggiorni oltre le 30 notti:</strong> Mese 1: Interamente a carico dell'ospite. Mese 2: Costo diviso al 50%. Mese 3 e successivi: Interamente a carico di 2EMME RE&CONSULTING. Pulizia finale fissa: 80,00 Euro per soggiorni lunghi.</p>
-        </div></div>
-
-        <button class="accordion">4. Politica Energetica, Fair Use e Overuse <span>+</span></button>
-        <div class="panel"><div class="panel-inner">
-            <p><strong>Climatizzazione/Riscaldamento:</strong> Massimo 20°C a finestre chiuse. Spegnere sempre prima di uscire. <strong>Acqua Calda:</strong> Boiler elettrico da 50 litri; usare con estrema parsimonia. <strong>Forfait Utenze:</strong> 80,00 Euro primi 30gg, poi 3,00 Euro/gg (fino a max +90,00 Euro mensili).</p>
-            <p><strong>Soglie Fair Use (Mese):</strong> Nest/Suite 240 kWh (Estate) | Nest 750 scatti + 180 kWh (Inverno). Overuse: Luce 0,80 Euro/kWh, Riscaldamento 0,35 Euro/scatto.</p>
-        </div></div>
-
-        <button class="accordion">5. Diversity e Inclusion (D&I) <span>+</span></button>
-        <div class="panel"><div class="panel-inner">
-            <p>Crediamo in uno spazio sicuro e inclusivo indipendentemente da genere, orientamento, razza o religione. <strong>Politica Non Violenza:</strong> Tolleranza zero per aggressioni fisiche o verbali verso personale, ospiti o vicinato. Ogni atto discriminatorio è severamente vietato.</p>
-        </div></div>
-
-        <button class="accordion">6. Recesso Anticipato e Rimborsi <span>+</span></button>
-        <div class="panel"><div class="panel-inner">
-            <p><strong>Regola del Mercoledì:</strong> La disdetta deve essere inviata formalmente; il conteggio parte dal primo mercoledì utile successivo. <strong>Rilascio:</strong> Decorse 10 giornate dal mercoledì di riferimento. <strong>Penale:</strong> Pari a 1 settimana (7 giorni) di soggiorno compensativo.</p>
-        </div></div>
-
-        <button class="accordion">7. Informativa Privacy e GDPR (14 Punti Integrali) <span>+</span></button>
-        <div class="panel"><div class="panel-inner">
-            <span class="privacy-item"><b>1. Titolare:</b> 2EMME RE&CONSULTING di Matteo Masella, Via Pietro Colletta 70, Milano. P.IVA IT13411850962.</span>
-            <span class="privacy-item"><b>2. DPO:</b> Al momento non nominato.</span>
-            <span class="privacy-item"><b>3. Finalità:</b> Esecuzione contratto; Pubblica Sicurezza (Alloggiati Web); Obblighi fiscali; Tutela patrimonio.</span>
-            <span class="privacy-item"><b>4. Tipologie dati:</b> Identificativi, documenti, contatti, dati pagamento, documentazione danni.</span>
-            <span class="privacy-item"><b>5. Modalità:</b> Strumenti informatici protetti da HTTPS/TLS e backup regolari.</span>
-            <span class="privacy-item"><b>6. Destinatari:</b> Autorità PS, banche, commercialisti, gestori tecnici.</span>
-            <span class="privacy-item"><b>7. Estero:</b> Dati conservati esclusivamente in area UE.</span>
-            <span class="privacy-item"><b>8. Conservazione:</b> 10 anni fini fiscali; 5 anni per registri PS.</span>
-            <span class="privacy-item"><b>9. Diritti:</b> Accesso, rettifica, cancellazione (oblio), reclamo al Garante Privacy.</span>
-            <span class="privacy-item"><b>10. Conferimento:</b> Obbligatorio per legge e contratto. Il rifiuto impedisce il soggiorno.</span>
-            <span class="privacy-item"><b>11. Sicurezza:</b> Protocolli crittografici e controllo accessi rigoroso.</span>
-            <span class="privacy-item"><b>12. Profilazione:</b> Non viene effettuata profilazione automatizzata.</span>
-            <span class="privacy-item"><b>13. Aggiornamenti:</b> Versione Gennaio 2026.</span>
-            <span class="privacy-item"><b>14. Contatti:</b> matteo.masella@duemmeconsulting.it.</span>
-        </div></div>
-
-    </div>
+    <button class="accordion">2. REGOLE DELLA CASA (TESTO INTEGRALE) <span>▼</span></button>
+    <div class="panel"><div class="panel-inner">
+        <p><strong>Ospiti Registrati:</strong> Vietato ospitare persone non registrate su "Alloggiati Web". Presenza non dichiarata = allontanamento immediato.</p>
+        <p><strong>Divieto di Fumo:</strong> Rigorosamente non fumatori. Penale minima 200,00€ per sanificazione.</p>
+        <p><strong>Animali:</strong> Non ammessi per tutela allergie e arredi.</p>
+        <p><strong>WC Sanitrit:</strong> Gettare solo carta igienica. Ripristino tecnico per uso improprio (salviettine, cotone, cibo) addebitato integralmente all'ospite.</p>
+        <p><strong>Quiete:</strong> Rispetta il riposo dei vicini: non usare elettrodomestici rumorosi, non fare troppo rumore e, se vuoi ascoltare musica ad alto volume, usa le cuffie. Orari di quiete: <strong>23:00 – 08:00</strong>.</p>
+        <p><strong>Check-out:</strong> Tassativo entro le ore 11:00.</p>
     
-    <div class="footer-note">
-        2EMME RE&CONSULTING di Matteo Masella - Via Pietro Colletta 70, Milano<br>
-        Documento digitale generato per la stagione 2026.
-    </div>
+        <p><strong>Raccolta differenziata:</strong> È obbligatorio conferire i rifiuti separandoli secondo le regole comunali. I bidoni e le etichette sono presenti in appartamento; rispettare le indicazioni per vetro, plastica, indifferenziato e umido.</p>
+        <p><strong>Obbligo per le pulizie intermedie:</strong> Il personale addetto alle pulizie intermedie è tenuto a verificare e gestire la raccolta differenziata durante l'intervento e a segnalare eventuali non conformità.</p>
+        <p><strong>Check-in online obbligatorio:</strong> Prima dell'arrivo è obbligatorio completare la procedura di check-in online (Alloggiati Web / checkin.com). L'accesso all'appartamento non sarà consentito senza check-in completato.</p>
+        <p><strong>Pagamento Tassa di Soggiorno:</strong> La tassa di soggiorno deve essere pagata prima del check-in in casa; il mancato pagamento verrà bloccato durante la registrazione online e impedirà l'accesso all'alloggio.</p>
+    </div></div>
+
+    <button class="accordion">3. SERVIZIO DI PULIZIA E TUTELA IMMOBILE <span>▼</span></button>
+    <div class="panel"><div class="panel-inner">
+        <p>La pulizia intermedia (ogni 14gg) garantisce igiene e monitoraggio tecnico impianti.</p>
+        <p><strong>Mese 1:</strong> 100% carico ospite (€40/intervento).</p>
+        <p><strong>Mese 2:</strong> 50% carico ospite (€20).</p>
+        <p><strong>Mese 3:</strong> GRATIS (100% Host).</p>
+        <p><strong>Pulizia Finale:</strong> Fisso 80,00€ per soggiorni lunghi.</p>
+    </div></div>
+
+    <button class="accordion">4. MILANO GREEN DEAL E POLICY ENERGETICA <span>▼</span></button>
+    <div class="panel"><div class="panel-inner">
+        <p><strong>Visione:</strong> Milano è modello d’eccellenza Green Deal 2050. La nostra policy aiuta a raggiungere la neutralità climatica tramite il consumo responsabile.</p>
+        <p><strong>Climatizzazione:</strong> Solo finestre chiuse. Minimo 20°C. Vietato uso 24/7 (guasti a carico ospite).</p>
+        <p><strong>Monitoraggio Domotico:</strong> I sistemi rilevano abusi energetici (es. clima acceso con finestre aperte). La direzione tratterrà l'importo corrispondente dal deposito.</p>
+        <p><strong>Risorse Idriche (Boiler 50L):</strong> Uso responsabile necessario per permettere il ripristino termico del serbatoio.</p>
+
+        <h3>TABELLA 3: SOGLIE FAIR USE - INVERNO (15 Ottobre - 15 Maggio)</h3>
+        <table class="fair-use-table">
+            <thead>
+                <tr><th>Alloggio</th><th>Riscaldamento (Soglia Mese)</th><th>Elettricità (Soglia Mese)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>THE NOLO NEST</td><td>750 scatti</td><td>180 kWh</td></tr>
+                <tr><td>THE NOLO SUITE</td><td>600 scatti</td><td>180 kWh</td></tr>
+                <tr><td>THE NOLO STUDIO</td><td>420 scatti</td><td>150 kWh</td></tr>
+                <tr><td>MASOTTO TERRACE</td><td>270 scatti</td><td>150 kWh</td></tr>
+                <tr><td>THE NOLO HERITAGE</td><td>120 Smc (Gas)</td><td>90 kWh</td></tr>
+            </tbody>
+        </table>
+
+        <h3>4. LISTINO PENALI "OVERUSE"</h3>
+        <p>Elettricità Extra: <strong>0,80 € / kWh</strong></p>
+        <p>Riscaldamento Centralizzato Extra: <strong>0,35 € / scatto</strong></p>
+        <p>Riscaldamento Autonomo Gas Extra: <strong>1,50 € / Smc</strong></p>
+    </div></div>
+
+    <button class="accordion">7. ALLEGATO A – INFORMATIVA PRIVACY & GDPR (14 PUNTI) <span>▼</span></button>
+    <div class="panel"><div class="panel-inner">
+        <span class="privacy-item"><b>1. Titolare:</b> 2EMME RE&CONSULTING di Matteo Masella, Via Pietro Colletta 70, Milano.</span>
+        <span class="privacy-item"><b>2. DPO:</b> Non nominato. Contatti: matteo.masella@duemmeconsulting.it.</span>
+        <span class="privacy-item"><b>3. Finalità:</b> Esecuzione contratto, Alloggiati Web (PS), obblighi fiscali, tutela patrimonio.</span>
+        <span class="privacy-item"><b>4. Basi Giuridiche:</b> Contratto (Art. 6.1.b) e Obbligo Legale (Art. 6.1.c).</span>
+        <span class="privacy-item"><b>5. Dati Trattati:</b> Identificativi, documenti, contatti, dati pagamento e log domotici consumi.</span>
+        <span class="privacy-item"><b>6. Modalità:</b> Digitale/cartaceo con protocolli HTTPS/TLS e controllo accessi.</span>
+        <span class="privacy-item"><b>7. Destinatari:</b> Autorità PS, Agenzia Entrate, banche, tecnici incaricati.</span>
+        <span class="privacy-item"><b>8. Trasferimenti Estero:</b> Solo Paesi con protezione adeguata (Area UE).</span>
+        <span class="privacy-item"><b>9. Conservazione:</b> 10 anni (fiscale), 5 anni (PS).</span>
+        <span class="privacy-item"><b>10. Diritti:</b> Accesso, rettifica, oblio, portabilità, opposizione e reclamo al Garante Privacy.</span>
+        <span class="privacy-item"><b>11-14. Sicurezza e Note:</b> Misure tecniche, responsabilità del Titolare, modalità di reclamo e contatti.</span>
+    </div></div>
 </div>
 
 <script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'it'}, 'google_translate_element');
-}
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'it'}, 'google_translate_element');
+    }
 </script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <script>
     function calculate() {
         const days = parseInt(document.getElementById('days-slider').value);
         const seasonRate = parseFloat(document.getElementById('season-select').value);
         const payMult = parseFloat(document.getElementById('pay-mode').value);
-        
         document.getElementById('days-display').innerText = days;
         document.getElementById('res-days').innerText = days;
 
         const adrBase = 80;
-        let adrDisc = 0; let cleanFinal = 45; let util = 0; let benefitMsg = "Standard Access";
-        let taxTotal = 9.5 * Math.min(days, 14);
+        let adrDisc = days >= 61 ? 0.18 : (days >= 30 ? 0.10 : (days >= 14 ? 0.05 : 0));
+        let cleanFinal = days >= 14 ? 80 : 45;
 
-        // DETERMINAZIONE SCONTI E BENEFIT
-        if (days >= 14 && days < 30) { 
-            adrDisc = 0.05; cleanFinal = 80; benefitMsg = "Welcome Soft Drink (One-Shot)";
-        } else if (days >= 30 && days < 61) { 
-            adrDisc = 0.10; cleanFinal = 80; benefitMsg = "Spirit Kit + Park/Pul (M1: Ospite)";
-        } else if (days >= 61) { 
-            adrDisc = 0.18; cleanFinal = 80; 
-            benefitMsg = (days > 75) ? "Park/Pul/Reg GRATIS (M3)" : "Park/Pul/Reg 50% (M2)";
-        }
+        let stayGross = adrBase * days;
+        let netBase = stayGross * (1 - adrDisc);
+        let stayFinal = netBase * payMult;
 
-        const stayGross = adrBase * days;
-        const adrDiscountVal = stayGross * adrDisc;
-        const netBase = stayGross - adrDiscountVal;
-
-        // UTENZE / SURCHARGE
-        if (days < 30) {
-            util = Math.min(netBase * seasonRate, 80);
-            document.getElementById('pay-mode').disabled = true;
-            document.getElementById('pay-mode').value = "1";
-        } else {
-            let fullMonths = Math.floor(days / 30);
-            let extraDays = days % 30;
-            util = 80 + (Math.max(0, fullMonths - 1) * 90) + (extraDays * 3);
-            document.getElementById('pay-mode').disabled = false;
-        }
-
-        // REGISTRO PROGRESSIVO
-        let regTotal = 0;
-        if (days >= 30) {
-            let baseReg = (netBase * 0.02) + 16;
-            if (days <= 60) regTotal = baseReg;
-            else if (days <= 75) regTotal = baseReg * 0.5;
-            else regTotal = 0;
-        }
-
-        // PULIZIE INTERMEDIE PROGRESSIVE (stima 1 ogni 14gg)
-        let cleaningIntermedia = 0;
-        if (days > 14) {
-            let numInt = Math.floor(days / 14);
-            if (days <= 60) cleaningIntermedia = numInt * 40;
-            else if (days <= 75) cleaningIntermedia = (numInt * 40) * 0.5;
-            else cleaningIntermedia = 0;
-        }
-
-        let stayFinal = netBase;
-        if (days >= 30) stayFinal = netBase * payMult;
-
-        const totalDiscounts = adrDiscountVal + (netBase - stayFinal);
-        const finalPrice = stayFinal + util + cleaningIntermedia + regTotal + 15 + taxTotal + cleanFinal;
+        let util = days < 30 ? Math.min(netBase * seasonRate, 80) : 80 + (Math.floor(days/30)-1)*90 + ((days%30)*3);
+        let reg = days > 75 ? 0 : (days > 60 ? ((netBase * 0.02)+16)*0.5 : (days >= 30 ? (netBase * 0.02)+16 : 0));
+        let cleaningInterm = (days > 14) ? Math.floor(days/14)*40 * (days > 75 ? 0 : (days > 60 ? 0.5 : 1)) : 0;
+        let tax = 9.5 * Math.min(days, 14);
 
         document.getElementById('stay-cost').innerText = stayGross.toFixed(2);
-        document.getElementById('total-discount-val').innerText = totalDiscounts.toFixed(2);
+        document.getElementById('total-discount-val').innerText = (stayGross - stayFinal).toFixed(2);
         document.getElementById('util-cost').innerText = util.toFixed(2);
-        document.getElementById('reg-cost').innerText = regTotal.toFixed(2);
-        document.getElementById('cleaning-cost').innerText = cleaningIntermedia.toFixed(2);
-        document.getElementById('tax-cost').innerText = taxTotal.toFixed(2);
-        document.getElementById('benefit-display').innerText = benefitMsg;
-        document.getElementById('final-total').innerText = finalPrice.toFixed(2);
+        document.getElementById('reg-cost').innerText = reg.toFixed(2);
+        document.getElementById('cleaning-cost').innerText = cleaningInterm.toFixed(2);
+        document.getElementById('tax-cost').innerText = (tax + 15 + cleanFinal).toFixed(2);
+        document.getElementById('final-total').innerText = (stayFinal + util + reg + cleaningInterm + tax + 15 + cleanFinal).toFixed(2);
     }
 
-    // ACCORDION
     document.querySelectorAll('.accordion').forEach(acc => {
         acc.onclick = function() {
             this.classList.toggle('active');
@@ -316,8 +259,41 @@ function googleTranslateElementInit() {
             panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
         };
     });
-
     calculate();
 </script>
+
+<script>
+  // Fallback helper: if Google Translate doesn't initialise within 4s, show hint.
+  (function(){
+    var checkCount = 0;
+    function showHint() {
+      var el = document.getElementById('google_translate_element');
+      if (!el) return;
+      var hintId = 'translate-hint';
+      if (document.getElementById(hintId)) return;
+      var hint = document.createElement('div');
+      hint.id = hintId;
+      hint.style.marginTop = '8px';
+      hint.style.fontSize = '13px';
+      hint.style.color = '#f0e68c';
+      hint.innerText = 'Widget traduzione non disponibile — se stai aprendo il file direttamente (file://), prova a servire il file via HTTP/HTTPS (es. python -m http.server) o pubblicalo su un hosting (Netlify/GitHub Pages).';
+      el.appendChild(hint);
+    }
+    function check() {
+      checkCount++;
+      if (window.google && window.google.translate && typeof window.google.translate.TranslateElement === 'function') {
+        // ok — widget loaded
+        return;
+      }
+      if (checkCount > 8) { // ~4 seconds (interval 500ms)
+        showHint();
+      } else {
+        setTimeout(check, 500);
+      }
+    }
+    setTimeout(check, 500);
+  })();
+</script>
+
 </body>
 </html>
